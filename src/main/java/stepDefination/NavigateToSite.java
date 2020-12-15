@@ -69,7 +69,7 @@ public class NavigateToSite extends Baseclass {
 	public void Open_site_in_browser(String browserName) {
 		try {
 			//for Jenkins
-			browserName=System.getProperty("Browser");
+			//browserName=System.getProperty("Browser");
 			//
 			Baseclass.openBrowser(browserName);
 		} catch (Exception e) {
@@ -82,9 +82,9 @@ public class NavigateToSite extends Baseclass {
 		try {
 			Baseclass.windowmaximize();
 			//for Jenkins
-			Baseclass.navigateUrl(System.getProperty("url"));
+			//Baseclass.navigateUrl(System.getProperty("url"));
 			//
-//			Baseclass.navigateUrl(elementProperties.getProperty("url"));
+			Baseclass.navigateUrl(elementProperties.getProperty("url"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
 		}
@@ -105,9 +105,9 @@ public class NavigateToSite extends Baseclass {
 			String pageTitle = Baseclass.getPageTitle();
 			System.out.println("pageTitle :"+pageTitle);
 			//for Jenkins
-			Assert.assertEquals(pageTitle, System.getProperty("homepage_title"));
+			//Assert.assertEquals(pageTitle, System.getProperty("homepage_title"));
 			//
-//			Assert.assertEquals(pageTitle, elementProperties.getProperty("homepage_title"));
+			Assert.assertEquals(pageTitle, elementProperties.getProperty("homepage_title"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
 		}
