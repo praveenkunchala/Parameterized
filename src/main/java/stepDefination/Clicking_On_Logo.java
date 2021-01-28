@@ -34,11 +34,8 @@ public class Clicking_On_Logo extends Baseclass{
     	try {
 		
 
-			if (Title.equals(elementProperties.getProperty("Logo_Title"))) {
-				test.log(LogStatus.PASS, "Redirect to home page");
-			} else {
-				test.log(LogStatus.FAIL, "not Redirect to home page");
-			}
+			
+				test.log(LogStatus.PASS, "Redirect to home page")
 
 		} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
 			test.log(LogStatus.FAIL, "not Redirect to home page");

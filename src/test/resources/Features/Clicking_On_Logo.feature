@@ -8,6 +8,7 @@ And Accept the cookies
 Then Click Linkden for logging in
 Then Click on the profile icon at the top right of the page
 Then Click on Bank logo
+Then verify the home page title
 Then verify home page title after clicking on logo
 Examples: 
 		|browser	|
