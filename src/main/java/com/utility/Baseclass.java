@@ -70,9 +70,9 @@ public class Baseclass {
 			//ChromeOptions options = new ChromeOptions();
 			//options.addArguments("headless");
 			//driver = new ChromeDriver(options);
-           ChromeOptions options=new  ChromeOptions().setHeadless(true);
-           driver = new ChromeDriver(options);
-			//driver = new ChromeDriver();
+         //  ChromeOptions options=new  ChromeOptions().setHeadless(true);
+          // driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 			break;
 
 		case "internetexplorer":
