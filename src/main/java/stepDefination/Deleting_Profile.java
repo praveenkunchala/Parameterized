@@ -37,7 +37,7 @@ public class Deleting_Profile extends Baseclass {
 			String s = Baseclass.getPageTitle();
 			Baseclass.explicitlyWait(Baseclass.timeout);
 
-			if (s.contains(elementProperties.getProperty("homepagetitle"))) {
+			if (s.contains(elementProperties.getProperty("homepage_title"))) {
 				test.log(LogStatus.PASS, "Both Account Preference link and Profile icon are not displayed");
 			} else {
 				test.log(LogStatus.FAIL, "Both Account Preference link and Profile icon are  displayed");
