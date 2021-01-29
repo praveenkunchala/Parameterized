@@ -1,6 +1,6 @@
 @deleting_Profile
-Feature: Verify the styling for the Login button
-Scenario Outline:Verify Login Button
+Feature: Verify deleting Profile
+Scenario Outline:check for Profile deletion
 Given Open site in "<browser>"  
 Then navigate to the site
 Then verify the home page title
