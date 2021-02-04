@@ -256,7 +256,7 @@ public class Baseclass {
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		// Date date = new Date();
-		er = new ExtentReports("C:\\DOCKER_REPORTS\\Report" + dateFormat + ".html", true);
+		er = new ExtentReports("/root/reports" + dateFormat + ".html", true);
 		test = er.startTest("ExtentDemo");
 
 	}
