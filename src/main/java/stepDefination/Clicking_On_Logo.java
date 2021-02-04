@@ -28,7 +28,7 @@ public class Clicking_On_Logo extends Baseclass{
     }
 
     @Then("^verify home page title after clicking on logo$")
-    public void verify_home_page_title_after_clicking_on_logo() throws Throwable {
+	public void verify_home_page_title_after_clicking_on_logo() throws Throwable {
     	String Title=Baseclass.getPageTitle();
     	System.out.println(Title);
     	try {

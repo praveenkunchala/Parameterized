@@ -12,7 +12,7 @@ Then Select 'your business' section
 Then Select a 'business location' from the drop down menu
 Examples: 
 		|browser	|
-		|edge		|
+		|chrome		|
 		
 @Business_Type_Saving		
 Scenario Outline: Verify the user is able to select an option
@@ -26,7 +26,7 @@ Then Select 'your business' section
 Then Select a 'business type' from the drop down menu
 Examples: 
 		|browser	|
-		|edge		|
+		|chrome		|
 
 @Business_Turn_Over_Saving		
 Scenario Outline: Verify the user is able to select an option
@@ -40,4 +40,4 @@ Then Select 'your business' section
 Then Select a 'business turn over' from the drop down menu
 Examples: 
 		|browser	|
-		|edge		|
+		|chrome		|

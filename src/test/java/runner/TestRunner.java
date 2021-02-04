@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 				glue = { "stepDefination" }, 
 				monochrome = true, 
 				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
-				tags = {"@deleting_Profile"}
+				tags = {"@PCC_Home_page,@PCC_Article_Validations"}
 )
 		public class TestRunner {
 			

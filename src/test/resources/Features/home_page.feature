@@ -20,9 +20,9 @@ Then Validate Menu Toolkits or Events Options "Events"
 
 Examples: Different browser parameter
 |browser	|
-|edge		|
+|chrome		|
 #|safari	|
-#|edge		|
+#|chrome		|
 #|firefox	|
 
 @PCC_Social_links
@@ -45,9 +45,9 @@ Then Check the post on Linkden
 
 Examples: 
 |browser	|
-|edge		|
+|chrome		|
 #|safari|
-#|edge		|
+#|chrome		|
 #|firefox	|
 
 @PCC_Search_Validations
@@ -66,7 +66,7 @@ Then Click Events sub field in search results Page and Validate Results "<Event_
 
 Examples: 
 |browser	|Search_Result_count			|Search_Page_Last|Spotlight_Number				|Toolkit_Number					|Event_Number				|
-|edge		|Search_Result_count_Articles	|Search_Page_Last|Search_Result_count_Spotlight	|Search_Result_count_toolkits	|Search_Result_count_Events	|
+|chrome		|Search_Result_count_Articles	|Search_Page_Last|Search_Result_count_Spotlight	|Search_Result_count_toolkits	|Search_Result_count_Events	|
 
 @PCC_Home_Page_Articles
 Scenario Outline: Verify Home Page Articles 
@@ -84,7 +84,7 @@ Then Validate Page nation in Home page "<Discover_our_content_cards>" and "<Page
 
 Examples: 
 |browser	|Latest_Article		|PageNation_Webelement|Field_Title_Article			|Actual_Field_Title_Article			|Field_Title				|Actual_Field_Title			|SpotLight				|PageNation_Spotlight		|Discover_Title			|Actual_Discover_Title	|Discover_our_content_cards	|PageNation_Discover|
-|edge		|Latest_Count_Home	|PageNation_count_Home|get_Latest_Article_Title_home|Actual_Latest_Article_Title_home	|get_Spotlight_Title_home	|Actual_Spotlight_Title_home|Spotlight_count_Home	|Spotlight_Pagenation_Count	|Discover_Title_Home	|Actual_Discover_Title	|Discover_our_content		|PageNation_Discover|
+|chrome		|Latest_Count_Home	|PageNation_count_Home|get_Latest_Article_Title_home|Actual_Latest_Article_Title_home	|get_Spotlight_Title_home	|Actual_Spotlight_Title_home|Spotlight_count_Home	|Spotlight_Pagenation_Count	|Discover_Title_Home	|Actual_Discover_Title	|Discover_our_content		|PageNation_Discover|
 
 
 #@PCC_Appium

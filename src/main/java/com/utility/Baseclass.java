@@ -1,5 +1,7 @@
 package com.utility;
 
+import java.net.URI;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +41,7 @@ public class Baseclass {
 	public static int count;
 	public static String browser = "Browser";
 
-	public static WebDriver driver;
+	public static RemoteWebDriver driver;
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
@@ -54,6 +56,7 @@ public class Baseclass {
 	public static final String AUTOMATE_ACCESS_KEY = "q1HXjZ17KEpuisMq1xyc";
 	public static final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY
 			+ "@hub-cloud.browserstack.com/wd/hub";
+	
 
 	public static Properties elementProperties;
 	static {
@@ -64,15 +67,19 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			// WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
-			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			//ChromeOptions options = new ChromeOptions();
 			//options.addArguments("headless");
 			//driver = new ChromeDriver(options);
          //  ChromeOptions options=new  ChromeOptions().setHeadless(true);
           // driver = new ChromeDriver(options);
-			driver = new ChromeDriver();
+		//	driver = new ChromeDriver();
+			
+		DesiredCapabilities dc=DesiredCapabilities.chrome();
+		URL url=new URL("http://54.173.70.218:4444/wd/hub");
+		 driver=new RemoteWebDriver(url,dc);
 			break;
 
 		case "internetexplorer":
@@ -249,7 +256,7 @@ public class Baseclass {
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		// Date date = new Date();
-		er = new ExtentReports("D:\\Bhanu_Test\\PPC Reports\\Report" + dateFormat + ".html", true);
+		er = new ExtentReports("C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\uister ni bhanu\\Report" + dateFormat + ".html", true);
 		test = er.startTest("ExtentDemo");
 
 	}

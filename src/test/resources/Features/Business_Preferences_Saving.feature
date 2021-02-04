@@ -12,4 +12,4 @@ Then Click save preferences
 Then Verify The Mobile page displays an 'successfully saved' message
 Examples: 
 |browser	|
-|edge		|
+|chrome		|
