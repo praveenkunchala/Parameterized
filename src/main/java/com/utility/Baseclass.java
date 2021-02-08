@@ -38,7 +38,7 @@ import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
-	public static DesiredCapabilities dc;
+	//public static DesiredCapabilities dc;
 	public static String title = null;
 	public static List<WebElement> list;
 	public static int count;
@@ -71,7 +71,7 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			WebDriverManager.chromedriver().setup();
+			// WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			// ChromeOptions options= new ChromeOptions();
@@ -88,16 +88,13 @@ public class Baseclass {
 			// driver = new ChromeDriver(options);
 			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
 			// options);
-			// dc= new DesiredCapabilities();
-			// dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-			// dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
-			// URL url= new URL("http://54.173.70.218:4444/wd/hub");
-
-			// driver = new RemoteWebDriver();
+			DesiredCapabilities dc=DesiredCapabilities.chrome();
+			URL url = new URL("http://54.173.70.218:4444/wd/hub");
+			driver= new RemoteWebDriver(url, dc);
 			// driver=new RemoteWebDriver(dc);
-			ChromeOptions options = new ChromeOptions().setHeadless(true);
-			
-			driver= new RemoteWebDriver(new URL("http://54.173.70.218:4445"), options);
+			// ChromeOptions options = new ChromeOptions().setHeadless(true);
+
+			// driver= new RemoteWebDriver(new URL("http://54.173.70.218:4445"), options);
 
 			break;
 
