@@ -72,20 +72,27 @@ public class Baseclass {
 		switch (browserType) {
 		case "chrome":
 			 WebDriverManager.chromedriver().setup();
-			 WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
+			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			/* ChromeOptions options = new ChromeOptions();
-			 options.addArguments("headless");
-			 driver = new ChromeDriver(options);
-*/			// ChromeOptions options=new ChromeOptions().setHeadless(true);
+			// ChromeOptions options= new ChromeOptions();
+			 
+			// options.addArguments("headless");
+			// driver = new ChromeDriver(options);
+			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
 			//driver = new ChromeDriver();
-
-			dc = new DesiredCapabilities();
-			dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-			dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
-			URL url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver = new RemoteWebDriver(url, dc);
+			 ChromeOptions options= new ChromeOptions();
+			 options.addArguments("headless");
+			 driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"), options);
+			//dc= new DesiredCapabilities();
+		//	dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+			//dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
+		//	URL url= new URL("http://54.173.70.218:4444/wd/hub");
+			
+		//driver = new RemoteWebDriver();
+			//driver=new RemoteWebDriver(dc);
+			 
+				
 			break;
 
 		case "internetexplorer":
