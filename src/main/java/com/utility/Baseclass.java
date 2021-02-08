@@ -46,7 +46,7 @@ public class Baseclass {
 
 	public static RemoteWebDriver driver;
 	public URL url;
-	//public static WebDriver driver;
+	// public static WebDriver driver;
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
@@ -71,58 +71,71 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			 WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			// ChromeOptions options= new ChromeOptions();
-			 
+
 			// options.addArguments("headless");
 			// driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
-			//driver = new ChromeDriver();
-			 ChromeOptions options= new ChromeOptions();
-			 options.addArguments("headless");
-			 driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"), options);
-			//dc= new DesiredCapabilities();
-		//	dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
-			//dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
-		//	URL url= new URL("http://54.173.70.218:4444/wd/hub");
-			
-		//driver = new RemoteWebDriver();
-			//driver=new RemoteWebDriver(dc);
-			 
-				
+			// driver = new ChromeDriver();
+			/*
+			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
+			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
+			 */
+			// driver = new ChromeDriver(options);
+			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
+			// options);
+			// dc= new DesiredCapabilities();
+			// dc.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
+			// dc.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
+			// URL url= new URL("http://54.173.70.218:4444/wd/hub");
+
+			// driver = new RemoteWebDriver();
+			// driver=new RemoteWebDriver(dc);
+			ChromeOptions options = new ChromeOptions();
+			driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"), options);
+
 			break;
 
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
 			// driver = new InternetExplorerDriver();
-				/*dc = DesiredCapabilities.internetExplorer();
-				url = new URL("http://54.173.70.218:4444/wd/hub");
-				driver = new RemoteWebDriver(url, dc);*/
+			/*
+			 * dc = DesiredCapabilities.internetExplorer(); url = new
+			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
+			 * dc);
+			 */
 			break;
 
 		case "firefox":
 			// WebDriverManager.firefoxdriver().setup();
 			// driver = new FirefoxDriver();
-			/*dc = DesiredCapabilities.firefox();
-			url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver = new RemoteWebDriver(url, dc);*/
+			/*
+			 * dc = DesiredCapabilities.firefox(); url = new
+			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
+			 * dc);
+			 */
 
 			break;
 		case "edge":
-			/*dc = DesiredCapabilities.edge();
-			url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver = new RemoteWebDriver(url, dc);*/
+			/*
+			 * dc = DesiredCapabilities.edge(); url = new
+			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
+			 * dc);
+			 */
 			// WebDriverManager.edgedriver().setup();
 			// driver = new EdgeDriver();
 			break;
 
 		case "safari":
-			/*dc = DesiredCapabilities.safari();
-			url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver = new RemoteWebDriver(url, dc);*/
+			/*
+			 * dc = DesiredCapabilities.safari(); url = new
+			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
+			 * dc);
+			 */
 			// Baseclass.Safari_setup();
 			// browser = "safari";
 			break;
@@ -133,11 +146,13 @@ public class Baseclass {
 			break;
 
 		default:
-			/*dc = DesiredCapabilities.chrome();
-			url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver = new RemoteWebDriver(url, dc);*/
-			 WebDriverManager.chromedriver().setup();
-			 driver = new ChromeDriver();
+			/*
+			 * dc = DesiredCapabilities.chrome(); url = new
+			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
+			 * dc);
+			 */
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 			break;
 		}
 
@@ -285,7 +300,9 @@ public class Baseclass {
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		// Date date = new Date();
-		er = new ExtentReports("C://Users//Venkata.Kunchala//OneDrive - GlobalData PLC//Desktop//HUB//reports" + dateFormat + ".html", true);
+		er = new ExtentReports(
+				"C://Users//Venkata.Kunchala//OneDrive - GlobalData PLC//Desktop//HUB//reports" + dateFormat + ".html",
+				true);
 		test = er.startTest("ExtentDemo");
 
 	}
