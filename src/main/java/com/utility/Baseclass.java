@@ -15,6 +15,7 @@ import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -74,27 +75,28 @@ public class Baseclass {
 			// WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			// ChromeOptions options= new ChromeOptions();
-
-			// options.addArguments("headless");
-			// driver = new ChromeDriver(options);
+			
+			// ChromeOptions options=new ChromeOptions().setHeadless(true);
+			//options.addArguments("headless");
+		//	driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
 			// driver = new ChromeDriver();
 			/*
 			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
-			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
+			 * options.addArguments("headless");
+			 *  driver=new RemoteWebDriver(options);
 			 */
 			// driver = new ChromeDriver(options);
 			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
 			// options);
-			DesiredCapabilities dc=DesiredCapabilities.chrome();
-			URL url = new URL("http://54.173.70.218:4444/wd/hub");
-			driver= new RemoteWebDriver(url, dc);
-			// driver=new RemoteWebDriver(dc);
-			// ChromeOptions options = new ChromeOptions().setHeadless(true);
-
-			// driver= new RemoteWebDriver(new URL("http://54.173.70.218:4445"), options);
+		//	DesiredCapabilities dc=DesiredCapabilities.chrome();
+			ChromeOptions cap = new ChromeOptions(); 
+			cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
+			                  UnexpectedAlertBehaviour.IGNORE);
+			URL url= new URL("http://54.173.70.218:4444/wd/hub");
+			driver= new RemoteWebDriver(url, cap);
+			
 
 			break;
 
