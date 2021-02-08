@@ -98,6 +98,7 @@ public class Baseclass {
 			dc = DesiredCapabilities.firefox();
 			url = new URL("http://54.173.70.218:4444/wd/hub");
 			driver = new RemoteWebDriver(url, dc);
+
 			break;
 		case "edge":
 			dc = DesiredCapabilities.edge();
@@ -122,10 +123,10 @@ public class Baseclass {
 
 		default:
 			dc = DesiredCapabilities.chrome();
-			 url = new URL("http://54.173.70.218:4444/wd/hub");
+			url = new URL("http://54.173.70.218:4444/wd/hub");
 			driver = new RemoteWebDriver(url, dc);
-			//WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
+			// WebDriverManager.chromedriver().setup();
+			// driver = new ChromeDriver();
 			break;
 		}
 
