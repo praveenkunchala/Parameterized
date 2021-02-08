@@ -39,13 +39,13 @@ import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
-	//public static DesiredCapabilities dc;
+	// public static DesiredCapabilities dc;
 	public static String title = null;
 	public static List<WebElement> list;
 	public static int count;
 	public static String browser = "Browser";
 
-	//public static RemoteWebDriver driver;
+	// public static RemoteWebDriver driver;
 	public URL url;
 	public static WebDriver driver;
 	public static ChromeDriver ChromeDriver;
@@ -75,29 +75,42 @@ public class Baseclass {
 			// WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			
+
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
-			//options.addArguments("headless");
-		//	driver = new ChromeDriver(options);
+			// options.addArguments("headless");
+			// driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
 			// driver = new ChromeDriver();
 			/*
 			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
-			 * options.addArguments("headless");
-			 *  driver=new RemoteWebDriver(options);
+			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
 			 */
 			// driver = new ChromeDriver(options);
 			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
 			// options);
-		//	DesiredCapabilities dc=DesiredCapabilities.chrome();
-			ChromeOptions cap = new ChromeOptions(); 
-			cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-			                  UnexpectedAlertBehaviour.IGNORE);
-			URL url= new URL("http://54.173.70.218:4444/wd/hub");
-			driver= new RemoteWebDriver(url, cap);
-			
+			// DesiredCapabilities dc=DesiredCapabilities.chrome();
+			/*
+			 * ChromeOptions cap= new ChromeOptions().setHeadless(true);
+			 * cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
+			 * UnexpectedAlertBehaviour.IGNORE);
+			 */
 
+			/*
+			 * cap.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
+			 * cap.setCapability(CapabilityType.VERSION, "11");
+			 */
+			/*
+			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
+			 * RemoteWebDriver(ur, cap);
+			 */
+			DesiredCapabilities capability = DesiredCapabilities.chrome();
+	         capability.setBrowserName("chrome");
+	         capability.setPlatform(Platform.LINUX);
+	       //  driver = new RemoteWebDriver(new URL(nodeURL), capability)
+	         System.out.println("1");
+			driver = new RemoteWebDriver(new java.net.URL("http://54.173.70.218:4444/wd/hub"), capability);
+System.out.println("2");
 			break;
 
 		case "internetexplorer":
@@ -191,8 +204,11 @@ public class Baseclass {
 	public static void navigateUrl(String url) {
 		try {
 			if (driver != null) {
-				System.out.println("browser invoking");
+				System.out.println("browser invoking"+ url);
 				driver.get(url);
+				System.out.println("browser invoking after get url");
+			} else {
+				System.out.println("driver not invoking " + driver);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -299,24 +315,28 @@ public class Baseclass {
 		System.out.println("----------------------------------------------------------------------");
 		System.out.println("Executing Scenario :" + scenario.getName());
 
-		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		// String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new
+		// Date());
 		// Date date = new Date();
-		er = new ExtentReports(
-				"C://Users//Venkata.Kunchala//OneDrive - GlobalData PLC//Desktop//HUB//reports" + dateFormat + ".html",
-				true);
-		test = er.startTest("ExtentDemo");
+		// er = new ExtentReports(
+		// "C://Users//Venkata.Kunchala//OneDrive - GlobalData
+		// PLC//Desktop//HUB//reports" + dateFormat + ".html",
+		// true);
+		// test = er.startTest("ExtentDemo");
 
 	}
 
 	public static void tearDown(Scenario scenario) {
 		scenario.write("Finished scenario");
-		if (scenario.isFailed()) {
-			scenario.embed(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png");
-		}
+		/*
+		 * if (scenario.isFailed()) { // scenario.embed(((TakesScreenshot)
+		 * driver).getScreenshotAs(OutputType.BYTES), "image/png"); }
+		 */
 		System.out.println("Test Environment Destroyed ");
 		System.out.println("----------------------------------------------------------------------");
-		er.endTest(test);
-		er.flush();
+		/*
+		 * er.endTest(test); er.flush();
+		 */
 	}
 
 	public static void JavaScriptExec_click(WebElement WebElement) {
