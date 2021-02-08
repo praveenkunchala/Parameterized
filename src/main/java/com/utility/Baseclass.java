@@ -13,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +24,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -79,7 +81,9 @@ public class Baseclass {
 			// driver = new ChromeDriver(options);
 			// driver = new ChromeDriver();
 
-			dc = DesiredCapabilities.chrome();
+			dc =new DesiredCapabilities();
+             dc.setCapability(CapabilityType.BROWSER_NAME,BrowserType.CHROME);   
+             dc.setCapability(CapabilityType.PLATFORM_NAME,Platform.LINUX);
 			URL url = new URL("http://54.173.70.218:4444/wd/hub");
 			driver = new RemoteWebDriver(url, dc);
 			break;
