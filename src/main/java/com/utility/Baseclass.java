@@ -44,9 +44,9 @@ public class Baseclass {
 	public static int count;
 	public static String browser = "Browser";
 
-	public static RemoteWebDriver driver;
+	//public static RemoteWebDriver driver;
 	public URL url;
-	// public static WebDriver driver;
+	public static WebDriver driver;
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
