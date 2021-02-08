@@ -191,6 +191,7 @@ public class Baseclass {
 	public static void navigateUrl(String url) {
 		try {
 			if (driver != null) {
+				System.out.println("browser invoking");
 				driver.get(url);
 			}
 		} catch (Exception e) {

@@ -84,6 +84,7 @@ public class NavigateToSite extends Baseclass {
 			//for Jenkins
 			//Baseclass.navigateUrl(System.getProperty("url"));
 			//
+			System.out.println("hub url");
 			Baseclass.navigateUrl("https://ulsterbanknibusinesshub.com/");
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
