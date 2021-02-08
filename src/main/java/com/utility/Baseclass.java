@@ -95,8 +95,9 @@ public class Baseclass {
 
 			// driver = new RemoteWebDriver();
 			// driver=new RemoteWebDriver(dc);
-			ChromeOptions options = new ChromeOptions();
-			driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"), options);
+			ChromeOptions options = new ChromeOptions().setHeadless(true);
+			
+			driver= new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"), options);
 
 			break;
 
