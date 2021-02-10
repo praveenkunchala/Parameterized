@@ -72,7 +72,7 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			// WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -81,7 +81,7 @@ public class Baseclass {
 			// driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
-			// driver = new ChromeDriver();
+			//driver = new ChromeDriver();
 			/*
 			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
 			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
@@ -105,12 +105,12 @@ public class Baseclass {
 			 * RemoteWebDriver(ur, cap);
 			 */
 			DesiredCapabilities capability = DesiredCapabilities.chrome();
-	       //  capability.setBrowserName("chrome");
-	       //  capability.setPlatform(Platform.LINUX);
-	       //  driver = new RemoteWebDriver(new URL(nodeURL), capability)
-	         System.out.println("1");
+			// capability.setBrowserName("chrome");
+			// capability.setPlatform(Platform.LINUX);
+			// driver = new RemoteWebDriver(new URL(nodeURL), capability)
+			System.out.println("1");
 			driver = new RemoteWebDriver(new java.net.URL("http://52.87.188.221:4444/wd/hub"), capability);
-System.out.println("2");
+			System.out.println("2");
 			break;
 
 		case "internetexplorer":
@@ -204,7 +204,7 @@ System.out.println("2");
 	public static void navigateUrl(String url) {
 		try {
 			if (driver != null) {
-				System.out.println("browser invoking"+ url);
+				System.out.println("browser invoking" + url);
 				driver.get(url);
 				System.out.println("browser invoking after get url");
 			} else {
@@ -314,29 +314,29 @@ System.out.println("2");
 		System.out.println("Test Environment Set up ");
 		System.out.println("----------------------------------------------------------------------");
 		System.out.println("Executing Scenario :" + scenario.getName());
-
+		String path = System.getProperty("user.dir") + "\\reports\\index.html";
+		// ExtentSparkReporter repot=new ExtentSparkReporter();
 		// String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new
 		// Date());
 		// Date date = new Date();
-		// er = new ExtentReports(
-		// "C://Users//Venkata.Kunchala//OneDrive - GlobalData
-		// PLC//Desktop//HUB//reports" + dateFormat + ".html",
-		// true);
-		// test = er.startTest("ExtentDemo");
+		er = new ExtentReports(path, true);
+		test = er.startTest("ExtentDemo");
 
 	}
 
 	public static void tearDown(Scenario scenario) {
 		scenario.write("Finished scenario");
-		/*
-		 * if (scenario.isFailed()) { // scenario.embed(((TakesScreenshot)
-		 * driver).getScreenshotAs(OutputType.BYTES), "image/png"); }
-		 */
+
+		if (scenario.isFailed()) {
+			scenario.embed(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png");
+		}
+
 		System.out.println("Test Environment Destroyed ");
 		System.out.println("----------------------------------------------------------------------");
-		/*
-		 * er.endTest(test); er.flush();
-		 */
+
+		er.endTest(test);
+		er.flush();
+
 	}
 
 	public static void JavaScriptExec_click(WebElement WebElement) {

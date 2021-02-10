@@ -5,8 +5,8 @@ Scenario Outline: Verify the Preference link
 	Then navigate to the site 
 	Then verify the home page title 
 	And Accept the cookies
-	#Then Click Linkden for logging in 
-	#Then The user is able to see the account preferences link in the footer
+	Then Click Linkden for logging in 
+	Then The user is able to see the account preferences link in the footer
 	Examples: 
 		|browser	|
 		|chrome		|

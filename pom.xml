@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>BusinessHub</groupId>
@@ -104,29 +105,35 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 		<dependency>
-    		<groupId>com.relevantcodes</groupId>
-    		<artifactId>extentreports</artifactId>
-    		<version>2.41.2</version>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.6</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 		<dependency>
-    		<groupId>io.appium</groupId>
-    		<artifactId>java-client</artifactId>
-    		<version>7.3.0</version>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.3.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
-   			 <groupId>org.apache.commons</groupId>
-    		<artifactId>commons-lang3</artifactId>
-   			 <version>3.11</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
-    		<groupId>org.seleniumhq.selenium</groupId>
-    		<artifactId>selenium-server</artifactId>
-    		<version>3.141.59</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.141.59</version>
 		</dependency>
-		
-		 
+
+
 	</dependencies>
 </project>
