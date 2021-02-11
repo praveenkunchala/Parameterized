@@ -104,12 +104,12 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			DesiredCapabilities capability = DesiredCapabilities.chrome();
-			capability.setBrowserName("chrome");
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			capability.setBrowserName("firefox");
 			capability.setPlatform(Platform.LINUX);
 		
 			System.out.println("1");
-			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
+			driver= new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			System.out.println("2");
 			break;
 
