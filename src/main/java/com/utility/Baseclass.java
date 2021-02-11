@@ -39,7 +39,7 @@ import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
-	// public static DesiredCapabilities dc;
+	public static DesiredCapabilities dc;
 	public static String title = null;
 	public static List<WebElement> list;
 	public static int count;
@@ -109,7 +109,7 @@ public class Baseclass {
 			// capability.setPlatform(Platform.LINUX);
 			// driver = new RemoteWebDriver(new URL(nodeURL), capability)
 			System.out.println("1");
-			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444//wd/hub"), capability);
+			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			System.out.println("2");
 			break;
 
