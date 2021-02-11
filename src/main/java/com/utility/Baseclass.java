@@ -72,7 +72,7 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			//WebDriverManager.chromedriver().setup();
+			// WebDriverManager.chromedriver().setup();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -81,7 +81,7 @@ public class Baseclass {
 			// driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
-			//driver = new ChromeDriver();
+			// driver = new ChromeDriver();
 			/*
 			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
 			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
@@ -104,15 +104,15 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
-			capability.setBrowserName("firefox");
+			DesiredCapabilities capability = DesiredCapabilities.chrome();
+			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
-		
+			String s="http://18.132.3.110:4444/";
 			System.out.println("1");
-			driver= new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
+			driver = new RemoteWebDriver(new java.net.URL(s+"wd/hub"), capability);
 			System.out.println("2");
 			break;
-
+		//	http://18.132.3.110:4444/
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
 			// driver = new InternetExplorerDriver();
