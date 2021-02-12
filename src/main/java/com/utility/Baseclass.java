@@ -81,7 +81,7 @@ public class Baseclass {
 			// driver = new ChromeDriver(options);
 			// ChromeOptions options=new ChromeOptions().setHeadless(true);
 			// driver = new ChromeDriver(options);
-			// driver = new ChromeDriver();
+			 driver = new ChromeDriver();
 			/*
 			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
 			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
@@ -105,7 +105,7 @@ public class Baseclass {
 			 * RemoteWebDriver(ur, cap);
 			 */
 			DesiredCapabilities capability = DesiredCapabilities.chrome();
-			//capability.setBrowserName("chrome");
+			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
 			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
@@ -312,8 +312,9 @@ public class Baseclass {
 		System.out.println("Test Environment Set up ");
 		System.out.println("----------------------------------------------------------------------");
 		System.out.println("Executing Scenario :" + scenario.getName());
-		String path = System.getProperty("user.dir") + "\\reports\\index.html";
+		String path = System.getProperty("user.dir") + "\\target\\cucumber\\index.html";
 		// ExtentSparkReporter repot=new ExtentSparkReporter();
+		///target/cucumber/index.html
 		// String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new
 		// Date());
 		// Date date = new Date();
