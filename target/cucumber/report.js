@@ -90,7 +90,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 616744500,
+  "duration": 622728000,
   "status": "passed"
 });
 formatter.scenario({
@@ -164,61 +164,61 @@ formatter.match({
   "location": "NavigateToSite.Open_site_in_browser(String)"
 });
 formatter.result({
-  "duration": 3478211800,
+  "duration": 4927457500,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.navigated_to_the_site()"
 });
 formatter.result({
-  "duration": 3292717400,
+  "duration": 3273949800,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.verify_the_home_page_title()"
 });
 formatter.result({
-  "duration": 11023402100,
+  "duration": 11022548800,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.Accept_the_cookies()"
 });
 formatter.result({
-  "duration": 171274600,
+  "duration": 278084700,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Click_View_All_Article_Button()"
 });
 formatter.result({
-  "duration": 10227325500,
+  "duration": 10245634900,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Verify_Header_Title_Text()"
 });
 formatter.result({
-  "duration": 199681700,
+  "duration": 241712100,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Verify_Individual_Article_Page()"
 });
 formatter.result({
-  "duration": 5481951300,
+  "duration": 5268473100,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Verify_fields_bottom_page()"
 });
 formatter.result({
-  "duration": 444864700,
+  "duration": 302625900,
   "status": "passed"
 });
 formatter.write("Finished scenario");
 formatter.after({
-  "duration": 1270618100,
+  "duration": 1260685400,
   "status": "passed"
 });
 });
