@@ -89,7 +89,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 358735800,
+  "duration": 330421000,
   "status": "passed"
 });
 formatter.scenario({
@@ -164,68 +164,68 @@ formatter.match({
   "location": "NavigateToSite.Open_site_in_browser(String)"
 });
 formatter.result({
-  "duration": 2011629900,
+  "duration": 2084152300,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.navigated_to_the_site()"
 });
 formatter.result({
-  "duration": 2459623500,
+  "duration": 2210278700,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.verify_the_home_page_title()"
 });
 formatter.result({
-  "duration": 11023082700,
+  "duration": 11007258600,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.Accept_the_cookies()"
 });
 formatter.result({
-  "duration": 84783200,
+  "duration": 81290100,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Linkden_login()"
 });
 formatter.result({
-  "duration": 21771537500,
+  "duration": 21581832800,
   "status": "passed"
 });
 formatter.match({
   "location": "Preference_Page_View.click_on_the_profile_icon_at_the_top_right_of_the_page()"
 });
 formatter.result({
-  "duration": 2167202800,
+  "duration": 2140306700,
   "status": "passed"
 });
 formatter.match({
   "location": "Business_Preferences_Saving.select_preferences_for_your_business_section()"
 });
 formatter.result({
-  "duration": 430102700,
+  "duration": 317112000,
   "status": "passed"
 });
 formatter.match({
   "location": "Business_Preferences_Saving.click_save_preferences()"
 });
 formatter.result({
-  "duration": 60125000,
+  "duration": 58992800,
   "status": "passed"
 });
 formatter.match({
   "location": "Mobile_Automation_Appium.verify_the_Mobile_page_displays_an_successfully_saved_message()"
 });
 formatter.result({
-  "duration": 10406836400,
+  "duration": 25121192400,
   "status": "passed"
 });
 formatter.write("Finished scenario");
 formatter.after({
-  "duration": 819560700,
+  "duration": 836218400,
   "status": "passed"
 });
 });
