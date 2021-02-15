@@ -13,7 +13,7 @@ formatter.feature({
   ]
 });
 formatter.scenarioOutline({
-  "line": 20,
+  "line": 50,
   "name": "Verify Individual Article Page",
   "description": "",
   "id": "validate-article-listing-and-individual-pages;verify-individual-article-page",
@@ -21,53 +21,43 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 19,
-      "name": "@PCC_Verify_individual_Article_page"
+      "line": 49,
+      "name": "@PCC_Verify_All_Article_Pagenation"
     }
   ]
 });
 formatter.step({
-  "line": 21,
+  "line": 51,
   "name": "Open site in \"\u003cbrowser\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
+  "line": 52,
   "name": "navigate to the site",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
+  "line": 53,
   "name": "verify the home page title",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 24,
+  "line": 54,
   "name": "Accept the cookies",
   "keyword": "And "
 });
 formatter.step({
-  "line": 25,
+  "line": 55,
   "name": "Click View All Article Button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 26,
-  "name": "Verify Header Title and Text",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 27,
-  "name": "Verify individual article page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 28,
-  "name": "Verify fields in the bottom of the page",
+  "line": 56,
+  "name": "Verify PageNation",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 30,
+  "line": 58,
   "name": "",
   "description": "",
   "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;",
@@ -76,25 +66,25 @@ formatter.examples({
       "cells": [
         "browser"
       ],
-      "line": 31,
+      "line": 59,
       "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;1"
     },
     {
       "cells": [
         "chrome"
       ],
-      "line": 32,
+      "line": 60,
       "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 622728000,
+  "duration": 339680100,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 32,
+  "line": 60,
   "name": "Verify Individual Article Page",
   "description": "",
   "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;2",
@@ -102,17 +92,17 @@ formatter.scenario({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 1,
-      "name": "@PCC_Article_Validations"
+      "line": 49,
+      "name": "@PCC_Verify_All_Article_Pagenation"
     },
     {
-      "line": 19,
-      "name": "@PCC_Verify_individual_Article_page"
+      "line": 1,
+      "name": "@PCC_Article_Validations"
     }
   ]
 });
 formatter.step({
-  "line": 21,
+  "line": 51,
   "name": "Open site in \"chrome\"",
   "matchedColumns": [
     0
@@ -120,38 +110,28 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
+  "line": 52,
   "name": "navigate to the site",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
+  "line": 53,
   "name": "verify the home page title",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 24,
+  "line": 54,
   "name": "Accept the cookies",
   "keyword": "And "
 });
 formatter.step({
-  "line": 25,
+  "line": 55,
   "name": "Click View All Article Button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 26,
-  "name": "Verify Header Title and Text",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 27,
-  "name": "Verify individual article page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 28,
-  "name": "Verify fields in the bottom of the page",
+  "line": 56,
+  "name": "Verify PageNation",
   "keyword": "Then "
 });
 formatter.match({
@@ -164,61 +144,47 @@ formatter.match({
   "location": "NavigateToSite.Open_site_in_browser(String)"
 });
 formatter.result({
-  "duration": 4927457500,
+  "duration": 1918606700,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.navigated_to_the_site()"
 });
 formatter.result({
-  "duration": 3273949800,
+  "duration": 2696561200,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.verify_the_home_page_title()"
 });
 formatter.result({
-  "duration": 11022548800,
+  "duration": 11024690100,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.Accept_the_cookies()"
 });
 formatter.result({
-  "duration": 278084700,
+  "duration": 90900500,
   "status": "passed"
 });
 formatter.match({
   "location": "Article_Page_Validations.Click_View_All_Article_Button()"
 });
 formatter.result({
-  "duration": 10245634900,
+  "duration": 10089647600,
   "status": "passed"
 });
 formatter.match({
-  "location": "Article_Page_Validations.Verify_Header_Title_Text()"
+  "location": "Article_Page_Validations.verify_Pagenation()"
 });
 formatter.result({
-  "duration": 241712100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Article_Page_Validations.Verify_Individual_Article_Page()"
-});
-formatter.result({
-  "duration": 5268473100,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Article_Page_Validations.Verify_fields_bottom_page()"
-});
-formatter.result({
-  "duration": 302625900,
+  "duration": 21709044600,
   "status": "passed"
 });
 formatter.write("Finished scenario");
 formatter.after({
-  "duration": 1260685400,
+  "duration": 818775600,
   "status": "passed"
 });
 });
