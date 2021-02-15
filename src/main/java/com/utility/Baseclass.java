@@ -72,8 +72,8 @@ public class Baseclass {
 
 		switch (browserType) {
 		case "chrome":
-			//WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
