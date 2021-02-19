@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 				glue = { "stepDefination" }, 
 				monochrome = true, 
 				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
-				tags = {"@PCC_Verify_individual_Article_page"}
+				tags = {"@PCC_Home_page,@PCC_Article_Validations,@Account_Preference_Link"}
 )
 		public class TestRunner {
 			
