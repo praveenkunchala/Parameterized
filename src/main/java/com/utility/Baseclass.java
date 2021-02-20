@@ -39,7 +39,7 @@ import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
-	public static DesiredCapabilities dc;
+	public static DesiredCapabilities capability;
 	public static String title = null;
 	public static List<WebElement> list;
 	public static int count;
@@ -69,11 +69,11 @@ public class Baseclass {
 	}
 
 	public static void openBrowser(String browserType) throws Exception {
-
-		switch (browserType) {
+		String browserType1 = System.getProperty("browser");
+		switch (browserType1) {
 		case "chrome":
-			//WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
+			// WebDriverManager.chromedriver().setup();
+			// driver = new ChromeDriver();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -105,7 +105,7 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			capability = DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
@@ -115,39 +115,26 @@ public class Baseclass {
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
 			// driver = new InternetExplorerDriver();
-			/*
-			 * dc = DesiredCapabilities.internetExplorer(); url = new
-			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
-			 * dc);
-			 */
+
 			break;
 
 		case "firefox":
 			// WebDriverManager.firefoxdriver().setup();
 			// driver = new FirefoxDriver();
-			/*
-			 * dc = DesiredCapabilities.firefox(); url = new
-			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
-			 * dc);
-			 */
+			capability = DesiredCapabilities.firefox();
+			capability.setBrowserName("firefox");
+			capability.setPlatform(Platform.LINUX);
+			System.out.println("1");
+			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
+			System.out.println("2");
 
 			break;
 		case "edge":
-			/*
-			 * dc = DesiredCapabilities.edge(); url = new
-			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
-			 * dc);
-			 */
 			// WebDriverManager.edgedriver().setup();
 			// driver = new EdgeDriver();
 			break;
 
 		case "safari":
-			/*
-			 * dc = DesiredCapabilities.safari(); url = new
-			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
-			 * dc);
-			 */
 			// Baseclass.Safari_setup();
 			// browser = "safari";
 			break;
@@ -158,13 +145,14 @@ public class Baseclass {
 			break;
 
 		default:
-			/*
-			 * dc = DesiredCapabilities.chrome(); url = new
-			 * URL("http://54.173.70.218:4444/wd/hub"); driver = new RemoteWebDriver(url,
-			 * dc);
-			 */
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			capability = DesiredCapabilities.chrome();
+			capability.setBrowserName("chrome");
+			capability.setPlatform(Platform.LINUX);
+			System.out.println("1");
+			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
+			System.out.println("2");
+            //WebDriverManager.chromedriver().setup(); driver = new ChromeDriver();
+			 
 			break;
 		}
 
@@ -315,11 +303,12 @@ public class Baseclass {
 		System.out.println("Executing Scenario :" + scenario.getName());
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir")+"\\target\\cucumber\\"+dateFormat+".html";
-		//Date date = new Date();
+		String path = System.getProperty("user.dir") + "\\target\\cucumber\\" + dateFormat + ".html";
+		// Date date = new Date();
 		er = new ExtentReports(path, true);
 		test = er.startTest("ExtentDemo");
-		// er=new ExtentReports("D:\\Bhanu_Test\\PPC Reports\\Report"+dateFormat+".html",true);
+		// er=new ExtentReports("D:\\Bhanu_Test\\PPC
+		// Reports\\Report"+dateFormat+".html",true);
 	}
 
 	public static void tearDown(Scenario scenario) {
