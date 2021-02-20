@@ -69,8 +69,8 @@ public class Baseclass {
 	}
 
 	public static void openBrowser(String browserType) throws Exception {
-		String browserType1 = System.getProperty("browser");
-		switch (browserType1) {
+		//String browserType1 = System.getProperty("browser");
+		switch (browserType) {
 		case "chrome":
 			// WebDriverManager.chromedriver().setup();
 			// driver = new ChromeDriver();
