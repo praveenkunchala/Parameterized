@@ -220,8 +220,8 @@ public class Article_Page_Validations extends Baseclass {
 				Baseclass.explicitlyWait(10);
 			} catch (Exception  err) {
                 System.out.println("Entered into catch block");
-				WebElement w=Baseclass.driver.findElement(By.xpath("(//*[contains(text(),'Accept')])[1]"));
-				w.click();
+				/*WebElement w=Baseclass.driver.findElement(By.xpath("(//*[contains(text(),'Accept')])[1]"));
+				w.click();*/
 				String s = Baseclass.driver.getCurrentUrl();
 
 				System.out.println(s);
