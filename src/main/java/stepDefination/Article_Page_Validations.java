@@ -37,7 +37,7 @@ public class Article_Page_Validations extends Baseclass {
 	String Last_Updated;
 	String Share_field;
 	static int Preference_article;
-	WebElement ww;
+	
 
 	@And("^Click View All Article Button$")
 	public void Click_View_All_Article_Button() {
@@ -225,9 +225,10 @@ public class Article_Page_Validations extends Baseclass {
 				String s = Baseclass.driver.getCurrentUrl();
 
 				System.out.println(s);
+				WebElement ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
 				try {
 					System.out.println("try block2");
-			    ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
+			    
 				ww.click();
 				}
 				 catch (Exception errr) {
