@@ -250,6 +250,13 @@ public class Article_Page_Validations extends Baseclass {
 				// By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 
 			}
+			finally
+			{
+				driver.switchTo().alert().accept();
+				WebElement sign=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
+				sign.click();
+				
+			}
 
 			String Url = Baseclass.get_Url();
 			System.out.println("Url  :" + Url);
