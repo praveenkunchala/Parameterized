@@ -226,12 +226,17 @@ public class Article_Page_Validations extends Baseclass {
 
 				System.out.println(s);
 				//WebElement ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
-				WebElement ww=Baseclass.driver.findElement(By.xpath("//*[@aria-label='Sign in']"));
+				WebElement ww=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
 				try {
 					System.out.println("try block2");
 			    Baseclass.explicitlyWait(Baseclass.timeout);
-				ww.click();
+				//ww.click();
+			   
 				 Baseclass.explicitlyWait(Baseclass.timeout);
+				 Baseclass.JavaScriptExec_click(ww);
+				 Baseclass.explicitlyWait(Baseclass.timeout);
+				 Baseclass.explicitlyWait(Baseclass.timeout);
+				 System.out.println("end of try 2");
 				}
 				 catch (Exception errr) {
 					 System.out.println("catch block 2");
