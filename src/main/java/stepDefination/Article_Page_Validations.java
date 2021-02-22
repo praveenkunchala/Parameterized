@@ -217,7 +217,7 @@ public class Article_Page_Validations extends Baseclass {
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				Baseclass.explicitlyWait(10);
-			} catch (StaleElementReferenceException | ElementNotInteractableException e) {
+			} catch (Exception  err) {
 
 				WebElement w=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept')])"));
 				w.click();
@@ -228,11 +228,11 @@ public class Article_Page_Validations extends Baseclass {
 			    ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
 				ww.click();
 				}
-				 catch (Exception err) {
+				 catch (Exception errr) {
 				 Baseclass.JavaScriptExec_click(ww);
-						err.printStackTrace();
+						errr.printStackTrace();
 					}
-				
+				err.printStackTrace();
 				// Baseclass.WaitElementVisible(driver,
 				// By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 
