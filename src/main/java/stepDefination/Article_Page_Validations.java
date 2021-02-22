@@ -229,12 +229,15 @@ public class Article_Page_Validations extends Baseclass {
 				WebElement ww=Baseclass.driver.findElement(By.xpath("//*[@aria-label='Sign in']"));
 				try {
 					System.out.println("try block2");
-			    
+			    Baseclass.explicitlyWait(Baseclass.timeout);
 				ww.click();
+				 Baseclass.explicitlyWait(Baseclass.timeout);
 				}
 				 catch (Exception errr) {
 					 System.out.println("catch block 2");
+					 Baseclass.explicitlyWait(Baseclass.timeout);
 				 Baseclass.JavaScriptExec_click(ww);
+				 Baseclass.explicitlyWait(Baseclass.timeout);
 						errr.printStackTrace();
 					}
 				err.printStackTrace();
@@ -245,6 +248,7 @@ public class Article_Page_Validations extends Baseclass {
 
 			String Url = Baseclass.get_Url();
 			System.out.println("Url  :" + Url);
+			System.out.println("cookies url");
 			if (Url.equalsIgnoreCase(elementProperties.getProperty("Profile_Page"))) {
 				test.log(LogStatus.PASS, "Site is getting re-directing to User profile page after login");
 			} else {
