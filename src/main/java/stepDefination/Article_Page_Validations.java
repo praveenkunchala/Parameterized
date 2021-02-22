@@ -216,10 +216,13 @@ public class Article_Page_Validations extends Baseclass {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				Baseclass.explicitlyWait(10);
 			} catch (StaleElementReferenceException | ElementNotInteractableException e) {
-				//Baseclass.driver.findElement(By.xpath("\\*[text()='Accept cookies']")).click();
-				driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept cookies')])")).click();
+
+				Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept')])"))
+						.click();
+				String s=Baseclass.driver.getCurrentUrl();
+				System.out.println(s);
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
-				e.printStackTrace();
+
 			}
 
 			String Url = Baseclass.get_Url();
