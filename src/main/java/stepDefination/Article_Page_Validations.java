@@ -210,6 +210,7 @@ public class Article_Page_Validations extends Baseclass {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Poup"))).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			try {
+				System.out.println("Entered into try block");
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username")))
 						.sendKeys(elementProperties.getProperty("Linkden_User_name"));
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password")))
@@ -218,7 +219,7 @@ public class Article_Page_Validations extends Baseclass {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				Baseclass.explicitlyWait(10);
 			} catch (Exception  err) {
-
+                System.out.println("Entered into catch block");
 				WebElement w=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept')])"));
 				w.click();
 				String s = Baseclass.driver.getCurrentUrl();
