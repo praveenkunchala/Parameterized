@@ -17,6 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.relevantcodes.extentreports.LogStatus;
@@ -36,6 +37,7 @@ public class Article_Page_Validations extends Baseclass {
 	String Last_Updated;
 	String Share_field;
 	static int Preference_article;
+	WebElement ww;
 
 	@And("^Click View All Article Button$")
 	public void Click_View_All_Article_Button() {
@@ -217,11 +219,22 @@ public class Article_Page_Validations extends Baseclass {
 				Baseclass.explicitlyWait(10);
 			} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 
-				Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept')])"))
-						.click();
-				String s=Baseclass.driver.getCurrentUrl();
+				WebElement w=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Accept')])"));
+				w.click();
+				String s = Baseclass.driver.getCurrentUrl();
+
 				System.out.println(s);
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
+				try {
+			    ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
+				ww.click();
+				}
+				 catch (Exception err) {
+				 Baseclass.JavaScriptExec_click(ww);
+						err.printStackTrace();
+					}
+				
+				// Baseclass.WaitElementVisible(driver,
+				// By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 
 			}
 
