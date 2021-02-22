@@ -37,7 +37,7 @@ public class Article_Page_Validations extends Baseclass {
 	String Last_Updated;
 	String Share_field;
 	static int Preference_article;
-	
+	WebElement ww;
 
 	@And("^Click View All Article Button$")
 	public void Click_View_All_Article_Button() {
@@ -210,7 +210,7 @@ public class Article_Page_Validations extends Baseclass {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Poup"))).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			try {
-				System.out.println("Entered into try block");
+				System.out.println("Entered into try block 1");
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username")))
 						.sendKeys(elementProperties.getProperty("Linkden_User_name"));
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password")))
@@ -218,44 +218,50 @@ public class Article_Page_Validations extends Baseclass {
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				Baseclass.explicitlyWait(10);
-			} catch (Exception  err) {
-                System.out.println("Entered into catch block");
-				/*WebElement w=Baseclass.driver.findElement(By.xpath("(//*[contains(text(),'Accept')])[1]"));
-				w.click();*/
+			} catch (Exception err) {
+				System.out.println("Entered into catch block 1");
+				/*
+				 * WebElement
+				 * w=Baseclass.driver.findElement(By.xpath("(//*[contains(text(),'Accept')])[1]"
+				 * )); w.click();
+				 */
 				String s = Baseclass.driver.getCurrentUrl();
 
 				System.out.println(s);
-				//WebElement ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
-				WebElement ww=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
+				// WebElement
+				// ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign
+				// in')])"));
+				// WebElement
+				// ww=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
 				try {
 					System.out.println("try block2");
-			    Baseclass.explicitlyWait(Baseclass.timeout);
-				//ww.click();
-			   
-				 Baseclass.explicitlyWait(Baseclass.timeout);
-				 Baseclass.JavaScriptExec_click(ww);
-				 Baseclass.explicitlyWait(Baseclass.timeout);
-				 Baseclass.explicitlyWait(Baseclass.timeout);
-				 System.out.println("end of try 2");
+
+					Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
+					Baseclass.explicitlyWait(Baseclass.timeout);
+
+					Baseclass.explicitlyWait(Baseclass.timeout);
+					Baseclass.JavaScriptExec_click(ww);
+					Baseclass.explicitlyWait(Baseclass.timeout);
+					Baseclass.explicitlyWait(Baseclass.timeout);
+					System.out.println("end of try 2");
+				} catch (Exception errr) {
+					System.out.println("catch block 2");
+					Baseclass.explicitlyWait(Baseclass.timeout);
+					Baseclass.JavaScriptExec_click(ww);
+					Baseclass.explicitlyWait(Baseclass.timeout);
+					errr.printStackTrace();
 				}
-				 catch (Exception errr) {
-					 System.out.println("catch block 2");
-					 Baseclass.explicitlyWait(Baseclass.timeout);
-				 Baseclass.JavaScriptExec_click(ww);
-				 Baseclass.explicitlyWait(Baseclass.timeout);
-						errr.printStackTrace();
-					}
 				err.printStackTrace();
 				// Baseclass.WaitElementVisible(driver,
 				// By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
 
-			}
-			finally
-			{
+			} finally {
+				System.out.println("entered final block");
 				driver.switchTo().alert().accept();
-				WebElement sign=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
+				WebElement sign = Baseclass.driver
+						.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
 				sign.click();
-				
+				System.out.println("end of finally");
 			}
 
 			String Url = Baseclass.get_Url();
