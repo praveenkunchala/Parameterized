@@ -226,10 +226,12 @@ public class Article_Page_Validations extends Baseclass {
 
 				System.out.println(s);
 				try {
+					System.out.println("try block2");
 			    ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
 				ww.click();
 				}
 				 catch (Exception errr) {
+					 System.out.println("catch block 2");
 				 Baseclass.JavaScriptExec_click(ww);
 						errr.printStackTrace();
 					}
