@@ -348,6 +348,7 @@ public class Baseclass {
 			if (driver != null) {
 				JavascriptExecutor executor = (JavascriptExecutor) driver;
 				executor.executeScript("arguments[0].setAttribute('value', '" + SendKeys + "')", WebElement);
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
