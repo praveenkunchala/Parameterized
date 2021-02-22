@@ -225,7 +225,8 @@ public class Article_Page_Validations extends Baseclass {
 				String s = Baseclass.driver.getCurrentUrl();
 
 				System.out.println(s);
-				WebElement ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
+				//WebElement ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign in')])"));
+				WebElement ww=Baseclass.driver.findElement(By.xpath("//*[@aria-label='Sign in']"));
 				try {
 					System.out.println("try block2");
 			    
