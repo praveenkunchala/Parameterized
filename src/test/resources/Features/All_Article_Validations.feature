@@ -5,7 +5,7 @@ Feature: Validate Article listing and individual Pages
 Scenario Outline: Validate All_Article page
 Given Open site in "<browser>"  
 Then navigate to the site
-Then verify the home page title	
+#Then verify the home page title	
 And Accept the cookies
 And Click View All Article Button
 Then Verify Page Title Text of All Article page
