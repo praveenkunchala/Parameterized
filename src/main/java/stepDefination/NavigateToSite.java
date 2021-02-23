@@ -68,10 +68,10 @@ public class NavigateToSite extends Baseclass {
 	@Given("^Open site in \"(.*?)\"$")
 	public void Open_site_in_browser(String browserName) {
 		try {
+			//for jenkins
+			browserName=System.getProperty("browser");
 			
-			browserName=System.getProperty("Browser");
-			
-			//Baseclass.openBrowser(browserName);
+			Baseclass.openBrowser(browserName);
 		} catch (Exception e) {
 
 		}
