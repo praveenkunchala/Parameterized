@@ -13,4 +13,4 @@ Then Choose your interest tab
 Then Verify all categories are displayed on the page
 Examples: 
 		|browser	|
-		|edge		|
+		|chrome		|

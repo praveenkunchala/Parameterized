@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 729771600,
+              "duration": 575807300,
               "status": "passed"
             },
             "match": {
@@ -14,30 +14,19 @@
             }
           }
         ],
-        "line": 32,
-        "name": "Verify Individual Article Page",
+        "line": 15,
+        "name": "Saving Business Prferencess",
         "description": "",
-        "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 1816216800,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.afterScenario(Scenario)"
-            }
-          }
-        ],
+        "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 5319696800,
+              "duration": 2847414700,
               "status": "passed"
             },
-            "line": 21,
+            "line": 4,
             "name": "Open site in \"chrome\"",
             "match": {
               "arguments": [
@@ -55,10 +44,10 @@
           },
           {
             "result": {
-              "duration": 2839481200,
+              "duration": 2971701700,
               "status": "passed"
             },
-            "line": 22,
+            "line": 5,
             "name": "navigate to the site",
             "match": {
               "location": "NavigateToSite.navigated_to_the_site()"
@@ -67,76 +56,71 @@
           },
           {
             "result": {
-              "duration": 11020260300,
+              "duration": 24734812700,
               "status": "passed"
             },
-            "line": 23,
-            "name": "verify the home page title",
-            "match": {
-              "location": "NavigateToSite.verify_the_home_page_title()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 291238000,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "Accept the cookies",
-            "match": {
-              "location": "NavigateToSite.Accept_the_cookies()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10201258800,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "Click View All Article Button",
-            "match": {
-              "location": "Article_Page_Validations.Click_View_All_Article_Button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 251723300,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "Verify Header Title and Text",
-            "match": {
-              "location": "Article_Page_Validations.Verify_Header_Title_Text()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5563377400,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "Verify individual article page",
-            "match": {
-              "location": "Article_Page_Validations.Verify_Individual_Article_Page()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 808980300,
-              "status": "passed"
-            },
-            "output": [
-              "Finished scenario"
+            "comments": [
+              {
+                "line": 6,
+                "value": "#Then verify the home page title"
+              },
+              {
+                "line": 7,
+                "value": "#And Accept the cookies"
+              }
             ],
-            "line": 28,
-            "name": "Verify fields in the bottom of the page",
+            "line": 8,
+            "name": "Click Linkden for logging in",
             "match": {
-              "location": "Article_Page_Validations.Verify_fields_bottom_page()"
+              "location": "Article_Page_Validations.Linkden_login()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10336045400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Click on the profile icon at the top right of the page",
+            "match": {
+              "location": "Preference_Page_View.click_on_the_profile_icon_at_the_top_right_of_the_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 983832100,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Select preferences for \u0027your business\u0027 section",
+            "match": {
+              "location": "Business_Preferences_Saving.select_preferences_for_your_business_section()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 174328400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click save preferences",
+            "match": {
+              "location": "Business_Preferences_Saving.click_save_preferences()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26917436600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Verify The Mobile page displays an \u0027successfully saved\u0027 message",
+            "match": {
+              "location": "Mobile_Automation_Appium.verify_the_Mobile_page_displays_an_successfully_saved_message()"
             },
             "keyword": "Then "
           }
@@ -144,24 +128,20 @@
         "tags": [
           {
             "line": 1,
-            "name": "@PCC_Article_Validations"
-          },
-          {
-            "line": 19,
-            "name": "@PCC_Verify_individual_Article_page"
+            "name": "@Business_Preferences_Saving"
           }
         ]
       }
     ],
-    "name": "Validate Article listing and individual Pages",
+    "name": "Verify the user is able to save preferences",
     "description": "",
-    "id": "validate-article-listing-and-individual-pages",
+    "id": "verify-the-user-is-able-to-save-preferences",
     "keyword": "Feature",
-    "uri": "All_Article_Validations.feature",
+    "uri": "Business_Preferences_Saving.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@PCC_Article_Validations"
+        "name": "@Business_Preferences_Saving"
       }
     ]
   }

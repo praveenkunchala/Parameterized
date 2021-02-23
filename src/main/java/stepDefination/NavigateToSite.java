@@ -82,10 +82,10 @@ public class NavigateToSite extends Baseclass {
 		try {
 			Baseclass.windowmaximize();
 			//for Jenkins
-			//Baseclass.navigateUrl(System.getProperty("url"));
-			//
+			Baseclass.navigateUrl(System.getProperty("url"));
+			
 			System.out.println("hub url");
-			Baseclass.navigateUrl("https://ulsterbanknibusinesshub.com/");
+			//Baseclass.navigateUrl(elementProperties.getProperty("url"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
 		}

@@ -18,7 +18,7 @@ public class Hooks {
 	}
 	
 	
-	@After({"@PCC_Home_page,@PCC_Article_Validations,@Account_Preference_Link,@Business_Preferences_Saving,@clear_All_Button_All_Article_Page,@clear_All_Button_On_Pop_Up,@Clicking_On_Logo,@deleting_Profile,@Dropdowns_Selection,@Login_Button,@Preference_Categories,@Preference_Page_validations,@Preference_Page_View,@Select_All_Filter_Pop_Up,@User_Subscription,@Spot_Light_Article"})
+	@After({"@PCC_Home_page,@PCC_Article_Validations"})
 	public void afterScenario(Scenario scenario) {
 		
 		Baseclass.tearDown(scenario);

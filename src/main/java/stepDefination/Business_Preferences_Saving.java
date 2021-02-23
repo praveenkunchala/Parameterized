@@ -23,7 +23,8 @@ public class Business_Preferences_Saving extends Baseclass{
 
     @Then("^Select preferences for 'your business' section$")
     public void select_preferences_for_your_business_section() throws Throwable {
-		WebElement flag = Baseclass.driver
+		try{
+			WebElement flag = Baseclass.driver
 				.findElement(By.xpath(elementProperties.getProperty("Delete_button")));
 		((JavascriptExecutor) (Baseclass.driver)).executeScript("arguments[0].scrollIntoView();", flag);
         Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Business_Tab"))).click();
@@ -37,9 +38,17 @@ public class Business_Preferences_Saving extends Baseclass{
     Select r=new Select(bl);
     r.selectByIndex(3);
     Baseclass.scrollDownFull();
+    
+			} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException er) {
+				test.log(LogStatus.FAIL, "All options in Age  drop Down are not able to Select");
+				er.printStackTrace();
+			}
+
+		    }
+		
    
     
-    }
+    
 
     @Then("^Click save preferences$")
     public static void click_save_preferences() throws Throwable {

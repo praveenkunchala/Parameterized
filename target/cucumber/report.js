@@ -1,118 +1,113 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("All_Article_Validations.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Business_Preferences_Saving.feature");
 formatter.feature({
   "line": 2,
-  "name": "Validate Article listing and individual Pages",
+  "name": "Verify the user is able to save preferences",
   "description": "",
-  "id": "validate-article-listing-and-individual-pages",
+  "id": "verify-the-user-is-able-to-save-preferences",
   "keyword": "Feature",
   "tags": [
     {
       "line": 1,
-      "name": "@PCC_Article_Validations"
+      "name": "@Business_Preferences_Saving"
     }
   ]
 });
 formatter.scenarioOutline({
-  "line": 20,
-  "name": "Verify Individual Article Page",
+  "line": 3,
+  "name": "Saving Business Prferencess",
   "description": "",
-  "id": "validate-article-listing-and-individual-pages;verify-individual-article-page",
+  "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess",
   "type": "scenario_outline",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 19,
-      "name": "@PCC_Verify_individual_Article_page"
-    }
-  ]
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 21,
+  "line": 4,
   "name": "Open site in \"\u003cbrowser\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
+  "line": 5,
   "name": "navigate to the site",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
-  "name": "verify the home page title",
+  "comments": [
+    {
+      "line": 6,
+      "value": "#Then verify the home page title"
+    },
+    {
+      "line": 7,
+      "value": "#And Accept the cookies"
+    }
+  ],
+  "line": 8,
+  "name": "Click Linkden for logging in",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 24,
-  "name": "Accept the cookies",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Click View All Article Button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Verify Header Title and Text",
+  "line": 9,
+  "name": "Click on the profile icon at the top right of the page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 27,
-  "name": "Verify individual article page",
+  "line": 10,
+  "name": "Select preferences for \u0027your business\u0027 section",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 28,
-  "name": "Verify fields in the bottom of the page",
+  "line": 11,
+  "name": "Click save preferences",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 12,
+  "name": "Verify The Mobile page displays an \u0027successfully saved\u0027 message",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 30,
+  "line": 13,
   "name": "",
   "description": "",
-  "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;",
+  "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess;",
   "rows": [
     {
       "cells": [
         "browser"
       ],
-      "line": 31,
-      "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;1"
+      "line": 14,
+      "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess;;1"
     },
     {
       "cells": [
         "chrome"
       ],
-      "line": 32,
-      "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;2"
+      "line": 15,
+      "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 729771600,
+  "duration": 575807300,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 32,
-  "name": "Verify Individual Article Page",
+  "line": 15,
+  "name": "Saving Business Prferencess",
   "description": "",
-  "id": "validate-article-listing-and-individual-pages;verify-individual-article-page;;2",
+  "id": "verify-the-user-is-able-to-save-preferences;saving-business-prferencess;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
       "line": 1,
-      "name": "@PCC_Article_Validations"
-    },
-    {
-      "line": 19,
-      "name": "@PCC_Verify_individual_Article_page"
+      "name": "@Business_Preferences_Saving"
     }
   ]
 });
 formatter.step({
-  "line": 21,
+  "line": 4,
   "name": "Open site in \"chrome\"",
   "matchedColumns": [
     0
@@ -120,38 +115,43 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 22,
+  "line": 5,
   "name": "navigate to the site",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 23,
-  "name": "verify the home page title",
+  "comments": [
+    {
+      "line": 6,
+      "value": "#Then verify the home page title"
+    },
+    {
+      "line": 7,
+      "value": "#And Accept the cookies"
+    }
+  ],
+  "line": 8,
+  "name": "Click Linkden for logging in",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 24,
-  "name": "Accept the cookies",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 25,
-  "name": "Click View All Article Button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 26,
-  "name": "Verify Header Title and Text",
+  "line": 9,
+  "name": "Click on the profile icon at the top right of the page",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 27,
-  "name": "Verify individual article page",
+  "line": 10,
+  "name": "Select preferences for \u0027your business\u0027 section",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 28,
-  "name": "Verify fields in the bottom of the page",
+  "line": 11,
+  "name": "Click save preferences",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 12,
+  "name": "Verify The Mobile page displays an \u0027successfully saved\u0027 message",
   "keyword": "Then "
 });
 formatter.match({
@@ -164,61 +164,49 @@ formatter.match({
   "location": "NavigateToSite.Open_site_in_browser(String)"
 });
 formatter.result({
-  "duration": 5319696800,
+  "duration": 2847414700,
   "status": "passed"
 });
 formatter.match({
   "location": "NavigateToSite.navigated_to_the_site()"
 });
 formatter.result({
-  "duration": 2839481200,
+  "duration": 2971701700,
   "status": "passed"
 });
 formatter.match({
-  "location": "NavigateToSite.verify_the_home_page_title()"
+  "location": "Article_Page_Validations.Linkden_login()"
 });
 formatter.result({
-  "duration": 11020260300,
+  "duration": 24734812700,
   "status": "passed"
 });
 formatter.match({
-  "location": "NavigateToSite.Accept_the_cookies()"
+  "location": "Preference_Page_View.click_on_the_profile_icon_at_the_top_right_of_the_page()"
 });
 formatter.result({
-  "duration": 291238000,
+  "duration": 10336045400,
   "status": "passed"
 });
 formatter.match({
-  "location": "Article_Page_Validations.Click_View_All_Article_Button()"
+  "location": "Business_Preferences_Saving.select_preferences_for_your_business_section()"
 });
 formatter.result({
-  "duration": 10201258800,
+  "duration": 983832100,
   "status": "passed"
 });
 formatter.match({
-  "location": "Article_Page_Validations.Verify_Header_Title_Text()"
+  "location": "Business_Preferences_Saving.click_save_preferences()"
 });
 formatter.result({
-  "duration": 251723300,
+  "duration": 174328400,
   "status": "passed"
 });
 formatter.match({
-  "location": "Article_Page_Validations.Verify_Individual_Article_Page()"
+  "location": "Mobile_Automation_Appium.verify_the_Mobile_page_displays_an_successfully_saved_message()"
 });
 formatter.result({
-  "duration": 5563377400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Article_Page_Validations.Verify_fields_bottom_page()"
-});
-formatter.result({
-  "duration": 808980300,
-  "status": "passed"
-});
-formatter.write("Finished scenario");
-formatter.after({
-  "duration": 1816216800,
+  "duration": 26917436600,
   "status": "passed"
 });
 });

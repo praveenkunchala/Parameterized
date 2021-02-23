@@ -209,79 +209,30 @@ public class Article_Page_Validations extends Baseclass {
 
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Poup"))).click();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			try {
-				System.out.println("Entered into try block 1");
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username")))
-						.sendKeys(elementProperties.getProperty("Linkden_User_name"));
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password")))
-						.sendKeys(elementProperties.getProperty("Linkden_password"));
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				Baseclass.explicitlyWait(10);
-			} catch (Exception err) {
-				System.out.println("Entered into catch block 1");
-				/*
-				 * WebElement
-				 * w=Baseclass.driver.findElement(By.xpath("(//*[contains(text(),'Accept')])[1]"
-				 * )); w.click();
-				 */
-				String s = Baseclass.driver.getCurrentUrl();
-
-				System.out.println(s);
-				// WebElement
-				// ww=Baseclass.driver.findElement(By.xpath("normalize-space(//*[contains(text(),'Sign
-				// in')])"));
-				// WebElement
-				// ww=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
-				try {
-					System.out.println("try block2");
-
-					Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
-					Baseclass.explicitlyWait(Baseclass.timeout);
-
-					Baseclass.explicitlyWait(Baseclass.timeout);
-					Baseclass.JavaScriptExec_click(ww);
-					Baseclass.explicitlyWait(Baseclass.timeout);
-					Baseclass.explicitlyWait(Baseclass.timeout);
-					System.out.println("end of try 2");
-				} catch (Exception errr) {
-					System.out.println("catch block 2");
-					Baseclass.explicitlyWait(Baseclass.timeout);
-					Baseclass.JavaScriptExec_click(ww);
-					Baseclass.explicitlyWait(Baseclass.timeout);
-					errr.printStackTrace();
-				}
-				err.printStackTrace();
-				// Baseclass.WaitElementVisible(driver,
-				// By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
-
-			} finally {
-				System.out.println("entered final block");
-				driver.switchTo().alert().accept();
-				WebElement sign = Baseclass.driver
-						.findElement(By.xpath(elementProperties.getProperty("Linkden_Signup")));
-				sign.click();
-				System.out.println("end of finally");
-			}
-
+			
+			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username"))).sendKeys(elementProperties.getProperty("Linkden_User_name"));
+			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password"))).sendKeys(elementProperties.getProperty("Linkden_password"));
+			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			Baseclass.explicitlyWait(10);
 			String Url = Baseclass.get_Url();
-			System.out.println("Url  :" + Url);
-			System.out.println("cookies url");
-			if (Url.equalsIgnoreCase(elementProperties.getProperty("Profile_Page"))) {
+			System.out.println("Url  :"+Url);
+			if(Url.equalsIgnoreCase(elementProperties.getProperty("Profile_Page")))
+			{
 				test.log(LogStatus.PASS, "Site is getting re-directing to User profile page after login");
-			} else {
+			}
+			else
+			{
 				test.log(LogStatus.FAIL, "Site is not getting re-directing to User profile page after login");
 			}
 			Baseclass.explicitlyWait(2);
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Header_Logo"))).click();
-
+						
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			test.log(LogStatus.FAIL, "Unable to automate next button due to exception");
-
 			e.printStackTrace();
 		}
 	}
-
 	@Then("^Verify image after logging in$")
 	public void Image_after_login() throws InterruptedException, IOException {
 		try {
