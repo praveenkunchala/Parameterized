@@ -103,7 +103,7 @@ public class NavigateToSite extends Baseclass {
 //			NavigateToSite.Window_Popup();
 //			}
 			Baseclass.explicitlyWait(11);
-			String pageTitle = Baseclass.getPageTitle();
+			String pageTitle =Baseclass.getPageTitle();
 			Baseclass.explicitlyWait(Baseclass.timeout);
 			System.out.println("pageTitle :"+pageTitle);
 			
