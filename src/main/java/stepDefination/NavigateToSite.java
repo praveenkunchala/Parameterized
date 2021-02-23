@@ -104,10 +104,11 @@ public class NavigateToSite extends Baseclass {
 //			}
 			Baseclass.explicitlyWait(11);
 			String pageTitle = Baseclass.getPageTitle();
+			Baseclass.explicitlyWait(Baseclass.timeout);
 			System.out.println("pageTitle :"+pageTitle);
-			//for Jenkins
+			
 			//Assert.assertEquals(pageTitle, System.getProperty("homepage_title"));
-			//
+			
 			Assert.assertEquals(pageTitle, elementProperties.getProperty("homepage_title"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
