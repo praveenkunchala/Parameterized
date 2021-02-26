@@ -20,6 +20,7 @@ public class Preference_Page_View extends Baseclass {
 
 	@Then("^Click on the profile icon at the top right of the page$")
 	public void click_on_the_profile_icon_at_the_top_right_of_the_page() throws Throwable {
+		System.out.println("0");
 		Baseclass.explicitlyWait(Baseclass.timeout);
 		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Profile_Icon"))).click();
 

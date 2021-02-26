@@ -72,8 +72,8 @@ public class Baseclass {
 		//String browserType1 = System.setProperty(key, value);
 		switch (browserType) {
 		case "chrome":
-			/*WebDriverManager.chromedriver().setup();
-			 driver = new ChromeDriver();*/
+			 WebDriverManager.chromedriver().setup();
+			 driver = new ChromeDriver();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -105,12 +105,12 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			capability = DesiredCapabilities.chrome();
+			/*capability = DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
 			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
-			System.out.println("2");
+			System.out.println("2");*/
 			break;
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
@@ -303,7 +303,8 @@ public class Baseclass {
 		System.out.println("Executing Scenario :" + scenario.getName());
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "\\target\\cucumber\\" + dateFormat + ".html";
+		//String path = System.getProperty("user.dir") + "\\target\\cucumber\\" + dateFormat + ".html";
+		String path="C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\reports"+dateFormat+".html";
 		// Date date = new Date();
 		er = new ExtentReports(path, true);
 		test = er.startTest("ExtentDemo");

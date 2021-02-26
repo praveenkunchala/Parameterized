@@ -83,7 +83,8 @@ public class NavigateToSite extends Baseclass {
 			Baseclass.windowmaximize();
 			//for Jenkins
 			Baseclass.navigateUrl(System.getProperty("url"));
-			
+			String s=Baseclass.getPageTitle();
+			System.out.println(s);
 			System.out.println("hub url");
 			//Baseclass.navigateUrl(elementProperties.getProperty("url"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
@@ -193,7 +194,29 @@ public class NavigateToSite extends Baseclass {
 	
 	@And("^Accept the cookies$")
 	public void Accept_the_cookies(){
-		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("acceptcookies"))).click();
+		//for jenkins
+		//String bank=System.getProperty("homepage_title");
+		 String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		 try {
+		switch(bank)
+		{
+		case "RBS":
+		case "RBS Premier":
+		//Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("acceptcookies"))).click();
+		case "Ulster NI":
+		case "UIster ROI":
+		case "Ulster ROI":
+		WebElement	cookies=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("cookies")));
+		System.out.println("cookies 1");
+		cookies.findElement(By.xpath(elementProperties.getProperty("cookies_Window"))).click();
+		System.out.println("cookies2");
+		break;
+		}}
+		 catch(Exception e)
+		 {
+			 Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("acceptcookies"))).click(); 
+		 }
 	}
 
 	@And("^click view all article button$")

@@ -26,7 +26,12 @@ public class Business_Type_Saving extends Baseclass {
 
     @Then("^Select a 'business type' from the drop down menu$")
     public void select_business_type_from_the_drop_down_menu() throws Throwable {
-
+    	 String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		case "RBS":
+		case "Ulster NI":
 		try {
 			WebElement b1 = Baseclass.WaitElementVisible(driver,
 					By.xpath(elementProperties.getProperty("Business_Type")));
@@ -56,6 +61,38 @@ public class Business_Type_Saving extends Baseclass {
 			test.log(LogStatus.FAIL, "All options in Business_Type drop Down are not able to Select");
 			e.printStackTrace();
 		}
+		break;
+		case "Ulster ROI":
+		try {
+			WebElement b1 = Baseclass.WaitElementVisible(driver,
+					By.xpath(elementProperties.getProperty("Business_Type")));
+			Select r1 = new Select(b1);
 
+			t = r1.getOptions().size() - 1;
+			for (int i = 0; i <= t; i++) {
+
+				for (int ii = 0; ii < 3; ii++) {
+					try {
+						WebElement b = Baseclass.WaitElementVisible(driver,
+								By.xpath(elementProperties.getProperty("Business_Type")));
+						Select r = new Select(b);
+						r.selectByIndex(i);
+						test.log(LogStatus.PASS, "" + r.getFirstSelectedOption().getText()
+								+ " option in Business_Type drop Down are able to Select");
+						break;
+					} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+						System.out.println(e.getMessage());
+						e.printStackTrace();
+					}
+
+				}
+
+			}
+		} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+			test.log(LogStatus.FAIL, "All options in Business_Type drop Down are not able to Select");
+			e.printStackTrace();
+		}
+		break;
+		}
 	}
 }

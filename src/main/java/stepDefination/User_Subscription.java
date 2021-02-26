@@ -30,10 +30,23 @@ public class User_Subscription extends Baseclass {
 
 	@Then("^Tick the check box to be updated for the latest emails$")
 	public void tick_the_check_box_to_be_updated_for_the_latest_emails() throws Throwable {
-		
-		Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Email_click"))).click();
-
+	try {	
+	WebElement wb=Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Email_click")));
+	if(wb.isDisplayed())
+	{
+		wb.click();
 	}
+	else
+	{
+	test.log(LogStatus.INFO,"Email check box is not there");
+	}
+}
+	
+	catch(Exception er)
+	{
+		test.log(LogStatus.INFO, "Email check box is not there");
+		er.printStackTrace();
+	}}
 	@Then("^Verify The page displays an 'successfully saved' message on Your Interest screen$")
 	public void verify_The_page_displays_an_successfully_saved_message_on_Your_Interest_screen() throws Throwable {
 	   

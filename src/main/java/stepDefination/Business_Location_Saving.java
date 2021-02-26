@@ -34,7 +34,14 @@ public class Business_Location_Saving extends Baseclass {
 
 	@Then("^Select a 'business location' from the drop down menu$")
 	public void select_a_business_location_from_the_drop_down_menu() throws Throwable {
-
+		//for jenkins
+				String bank=System.getProperty("homepage_title");
+				// String bank=elementProperties.getProperty("homepage_title");
+				 System.out.println(bank);
+				switch(bank)
+				{
+				case "RBS":
+				case "Ulster NI":
 		try {
 			WebElement b1 = Baseclass.WaitElementVisible(driver,
 					By.xpath(elementProperties.getProperty("Business_location")));
@@ -64,6 +71,78 @@ public class Business_Location_Saving extends Baseclass {
 			test.log(LogStatus.FAIL, "All options in Business Location drop Down are not able to Select");
 			e.printStackTrace();
 		}
+			break;
+				case "RBS Premier":
+					int t;
+					
+					try {
+						Baseclass.RefreshPage();
+						WebElement flag = Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Delete_button")));
+						((JavascriptExecutor) (Baseclass.driver)).executeScript("arguments[0].scrollIntoView();", flag);
+						Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Business_Tab"))).click();
 
+						WebElement b1 = Baseclass.WaitElementVisible(driver,
+								By.xpath(elementProperties.getProperty("location")));
+						Select r1 = new Select(b1);
+
+						 t = r1.getOptions().size() - 1;
+						for (int i = 0; i <= t; i++) {
+
+							for (int ii = 0; ii < 3; ii++) {
+								try {
+									WebElement b = Baseclass.WaitElementVisible(driver,
+											By.xpath(elementProperties.getProperty("location")));
+									Select r = new Select(b);
+									r.selectByIndex(i);
+									test.log(LogStatus.PASS, "" + r.getFirstSelectedOption().getText()
+											+ " option in location drop Down are able to Select");
+									break;
+								} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+									System.out.println(e.getMessage());
+									e.printStackTrace();
+								}
+
+							}
+
+						}
+					} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+						test.log(LogStatus.FAIL, "All options in location  drop Down are not able to Select");
+						e.printStackTrace();
+					}
+break;
+				case "Ulster ROI":
+				
+		try {
+			WebElement b1 = Baseclass.WaitElementVisible(driver,
+					By.xpath(elementProperties.getProperty("Business_location1")));
+			Select r1 = new Select(b1);
+
+			t = r1.getOptions().size()-1;
+			for (int i = 0; i <= t; i++) {
+
+				for (int ii = 0; ii < 3; ii++) {
+					try {
+						WebElement b = Baseclass.WaitElementVisible(driver,
+								By.xpath(elementProperties.getProperty("Business_location1")));
+						Select r = new Select(b);
+						r.selectByIndex(i);
+						test.log(LogStatus.PASS, "" + r.getFirstSelectedOption().getText()
+								+ " option in Business Location drop Down are able to Select");
+						break;
+					} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+						System.out.println(e.getMessage());
+						e.printStackTrace();
+					}
+
+				}
+
+			}
+		} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
+			test.log(LogStatus.FAIL, "All options in Business Location drop Down are not able to Select");
+			e.printStackTrace();
+		}
+				    
+
+			}
 	}
 }

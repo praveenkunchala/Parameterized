@@ -48,8 +48,11 @@ public class Article_Page_Validations extends Baseclass {
 					.click();
 
 			Baseclass.explicitlyWait(Baseclass.timeout);
-			String Page_title = Baseclass.getPageTitle();
-			if (Page_title.equals(elementProperties.getProperty("All_Article_Page_Title"))) {
+			String Page_title=Baseclass.getPageTitle();
+			System.out.println(Page_title);
+			System.out.println(Page_title.replaceAll("\\s",""));
+			if (Page_title.replaceAll("\\s","").contains("Allarticles")) {
+				System.out.println(Page_title.replaceAll("\\s",""));
 				test.log(LogStatus.PASS, "Article Button is clicked and user is re-directed to 'All Article' Page");
 			} else {
 				test.log(LogStatus.FAIL, "Unable to click Article Button");

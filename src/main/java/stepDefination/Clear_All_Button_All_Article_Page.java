@@ -38,8 +38,13 @@ public class Clear_All_Button_All_Article_Page extends Baseclass {
 	@Then("^Select the category by checking on the check box and click apply$")
 	public void select_the_category_by_checking_on_the_check_box_and_click_apply() throws Throwable {
 		WebElement Pop_Up = Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Pop_Up_Browser")));
+		try {
 		Pop_Up.findElement(By.xpath(elementProperties.getProperty("Cyber_Security_check_Box"))).click();
-
+		}
+		catch(Exception e)
+		{
+			Pop_Up.findElement(By.xpath("/html/body/div[3]/div[3]/div[1]/div/div/div[1]/div[2]/label[1]/span[1]/span[1]/input")).click();	
+		}
 		Robot robot = new Robot();
 		for (int i = 0; i <= 1; i++) {
 
