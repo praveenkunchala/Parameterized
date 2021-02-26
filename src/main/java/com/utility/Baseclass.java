@@ -303,7 +303,7 @@ public class Baseclass {
 		System.out.println("Executing Scenario :" + scenario.getName());
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "\\target" + dateFormat + ".html";
+		String path = System.getProperty("user.dir") + "\\target\\cucumber\\" + dateFormat + ".html";
 		//String path="C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\reports"+dateFormat+".html";
 		// Date date = new Date();
 		er = new ExtentReports(path, true);
