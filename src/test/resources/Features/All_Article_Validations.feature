@@ -1,8 +1,8 @@
 @PCC_Article_Validations
-Feature: Validate Article listing and individual Pages--jira ticket No OD-3353
+Feature: Validate Article listing and individual Pages--jira ticket No OD-3353 
 
-@PCC_All_Article_Page
-Scenario Outline: Validate All_Article page--(TC ID-64)
+@PCC_All_Article_Page:-TC-ID-64/JIRA-Ticket-No:-OD-3353 
+Scenario Outline: Validate All_Article page
 Given Open site in "<browser>"  
 Then navigate to the site
 Then verify the home page title	
