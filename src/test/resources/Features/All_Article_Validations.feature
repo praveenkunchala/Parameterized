@@ -1,11 +1,11 @@
 @PCC_Article_Validations
-Feature: Validate Article listing and individual Pages
+Feature: Validate Article listing and individual Pages--jira ticket No OD-3353
 
 @PCC_All_Article_Page
-Scenario Outline: Validate All_Article page
+Scenario Outline: Validate All_Article page--(TC ID-64)
 Given Open site in "<browser>"  
 Then navigate to the site
-#Then verify the home page title	
+Then verify the home page title	
 And Accept the cookies
 And Click View All Article Button
 Then Verify Page Title Text of All Article page

@@ -1,0 +1,156 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 653949500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.ExtentReport(Scenario)"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Validate All_Article page--(TC ID-64)",
+        "description": "",
+        "id": "validate-article-listing-and-individual-pages--jira-ticket-no-od-3353;validate-all-article-page--(tc-id-64);;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1229618900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3038327500,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Open site in \"chrome\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 14
+                }
+              ],
+              "location": "NavigateToSite.Open_site_in_browser(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4357551200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "navigate to the site",
+            "match": {
+              "location": "NavigateToSite.navigated_to_the_site()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21042980000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "verify the home page title",
+            "match": {
+              "location": "NavigateToSite.verify_the_home_page_title()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 160836000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Accept the cookies",
+            "match": {
+              "location": "NavigateToSite.Accept_the_cookies()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10487431300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Click View All Article Button",
+            "match": {
+              "location": "Article_Page_Validations.Click_View_All_Article_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 249980500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Verify Page Title Text of All Article page",
+            "match": {
+              "location": "Article_Page_Validations.Verify_Page_Title_Text()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1606267400,
+              "status": "passed"
+            },
+            "output": [
+              "Finished scenario"
+            ],
+            "line": 12,
+            "name": "Verify Video option in the article",
+            "match": {
+              "location": "Article_Page_Validations.Video_option_article()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@PCC_All_Article_Page"
+          },
+          {
+            "line": 1,
+            "name": "@PCC_Article_Validations"
+          }
+        ]
+      }
+    ],
+    "name": "Validate Article listing and individual Pages--jira ticket No OD-3353",
+    "description": "",
+    "id": "validate-article-listing-and-individual-pages--jira-ticket-no-od-3353",
+    "keyword": "Feature",
+    "uri": "All_Article_Validations.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@PCC_Article_Validations"
+      }
+    ]
+  }
+]
