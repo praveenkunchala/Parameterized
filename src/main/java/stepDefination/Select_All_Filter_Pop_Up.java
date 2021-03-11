@@ -18,8 +18,8 @@ public class Select_All_Filter_Pop_Up extends Baseclass {
 	public void click_on_all_select_all_button_and_verify_all_the_categories_are_selected_for_a_topic()
 			throws Throwable {
 		//jenkin
-		String bank=System.getProperty("homepage_title");
-		// String bank=elementProperties.getProperty("homepage_title");
+		//String bank=System.getProperty("homepage_title");
+		String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)
 		{

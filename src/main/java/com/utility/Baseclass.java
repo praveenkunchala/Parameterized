@@ -36,6 +36,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import cucumber.api.Scenario;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
@@ -72,8 +73,8 @@ public class Baseclass {
 		//String browserType1 = System.setProperty(key, value);
 		switch (browserType) {
 		case "chrome":
-			 //WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver();
+			 WebDriverManager.chromedriver().setup();
+			 driver = new ChromeDriver();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -105,12 +106,12 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			capability = DesiredCapabilities.chrome();
+			/*capability = DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
 			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
-			System.out.println("2");
+			System.out.println("2");*/
 			break;
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
@@ -171,7 +172,7 @@ public class Baseclass {
 	}
 
 	public static void Mobile_setup() throws Exception {
-		DesiredCapabilities caps = new DesiredCapabilities();
+		/*DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("deviceName", "emulator-5554");
 		caps.setCapability("platformName", "Android");
 		caps.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
@@ -179,9 +180,16 @@ public class Baseclass {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		caps.setCapability(ChromeOptions.CAPABILITY, options);
-		caps.setCapability("autoDismissAlerts", true);
+		caps.setCapability("autoDismissAlerts", true);*/
 		// driver =new ChromeDriver(options);
-		driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
+		//my code
+		DesiredCapabilities dc= new DesiredCapabilities();
+		//dc.setCapability("remoteAdbHost",new URL("192.168.0.101"));
+		//dc.setCapability("devicePort","5037");
+		dc.setCapability("deviceName","Samsung Galaxy S6");
+		dc.setCapability("platformName", "Android");
+		driver = new RemoteWebDriver(new java.net.URL("http://34.228.220.218:6080"),dc);
+		//driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
 	}
 
 	public static WebElement WaitElementVisible(WebDriver driver, By by) {
@@ -303,8 +311,8 @@ public class Baseclass {
 		System.out.println("Executing Scenario :" + scenario.getName());
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "\\target\\cucumber\\" + dateFormat + ".html";
-		//String path="C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\reports"+dateFormat+".html";
+		//String path = System.getProperty("user.dir") +"\\target\\cucumber\\" + dateFormat + ".html";
+		String path="C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\reports"+dateFormat+".html";
 		// Date date = new Date();
 		er = new ExtentReports(path, true);
 		test = er.startTest("ExtentDemo");

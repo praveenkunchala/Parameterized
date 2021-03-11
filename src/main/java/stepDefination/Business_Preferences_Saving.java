@@ -22,9 +22,9 @@ public class Business_Preferences_Saving extends Baseclass {
 	@Then("^Select preferences for 'your business' section$")
 	public void select_preferences_for_your_business_section() throws Throwable {
 		//jenkin
-		String bank= System.getProperty("homepage_title");
+	//	String bank= System.getProperty("homepage_title");
 		//switch (title) {
-		// String bank=elementProperties.getProperty("homepage_title");
+		 String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)
 		{

@@ -26,6 +26,8 @@ public class Business_Type_Saving extends Baseclass {
 
     @Then("^Select a 'business type' from the drop down menu$")
     public void select_business_type_from_the_drop_down_menu() throws Throwable {
+    	//for jenkins
+    	//String bank=System.getProperty("homepage_title");
     	 String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)

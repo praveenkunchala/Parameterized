@@ -21,8 +21,8 @@ public class Preference_Page_validations extends Baseclass {
 	@Then("^validate preference Page Objects$")
 	public void validate_preference_page_objects() throws Throwable {
 		//for jenkins
-		String bank=System.getProperty("homepage_title");
-		// String bank=elementProperties.getProperty("homepage_title");
+		//String bank=System.getProperty("homepage_title");
+		 String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)
 		{
