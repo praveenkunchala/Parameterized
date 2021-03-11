@@ -9,7 +9,9 @@ import cucumber.api.junit.Cucumber;
 				glue = { "stepDefination" }, 
 				monochrome = true, 
 				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
-				tags = {"@PCC_Mobile_Automation"}
+
+				tags = {"@Business_location_Saving,@Business_Preferences_Saving,@Dropdowns_Selection"}
+
 )
 		public class TestRunner {
 			
