@@ -39,8 +39,8 @@ public class Preference_Categories extends Baseclass {
 	@Then("^Verify all categories are displayed on the page$")
 	public void verify_all_categories_are_displayed_on_the_page() throws Throwable {
 		//jenkin
-				String bank=System.getProperty("homepage_title");
-				// String bank=elementProperties.getProperty("homepage_title");
+				//String bank=System.getProperty("homepage_title");
+				 String bank=elementProperties.getProperty("homepage_title");
 				 System.out.println(bank);
 				switch(bank)
 				{

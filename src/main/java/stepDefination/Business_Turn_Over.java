@@ -22,6 +22,8 @@ public class Business_Turn_Over extends Baseclass {
 
 	@Then("^Select a 'business turn over' from the drop down menu$")
 	public void select_a_business_turn_over_from_the_drop_down_menu() throws Throwable {
+		//for jenkins
+		//String bank=System.getProperty("homepage_title");
 		String bank = elementProperties.getProperty("homepage_title");
 		System.out.println(bank);
 		switch (bank) {
