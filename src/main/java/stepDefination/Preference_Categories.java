@@ -51,7 +51,7 @@ public class Preference_Categories extends Baseclass {
 		String categories[] = { "Cyber Security", "Leadership and Management", "Sales and Marketing",
 				"Strategy and Planning", "Tech and Innovation", "Reports", "Sustainable Energy Update",
 				"Economics Weekly", "Manufacturing Weekly", "Property Monthly", "Agriculture",
-				"Charities and Third Sector", "Education", "Healthcare", "Leisure", "Manufacturing and Automotive",
+				"Charities and Third Sector", "Education","Future Mobility","Healthcare", "Leisure", "Manufacturing and Automotive",
 				"Professional Services", "Real Estate", "Renewable Energy", "Retail and Wholesale",
 				"Technology, Media and Telecoms" };
 		for (String s : categories) {

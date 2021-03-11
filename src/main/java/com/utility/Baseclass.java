@@ -73,8 +73,8 @@ public class Baseclass {
 		//String browserType1 = System.setProperty(key, value);
 		switch (browserType) {
 		case "chrome":
-			// WebDriverManager.chromedriver().setup();
-			// driver = new ChromeDriver();
+			 WebDriverManager.chromedriver().setup();
+			 driver = new ChromeDriver();
 			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
 			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 
@@ -106,13 +106,13 @@ public class Baseclass {
 			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
 			 * RemoteWebDriver(ur, cap);
 			 */
-			capability = DesiredCapabilities.chrome();
+			/*capability = DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
 			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			System.out.println("2");
-			break;
+			break;*/
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
 			// driver = new InternetExplorerDriver();
@@ -183,11 +183,13 @@ public class Baseclass {
 		caps.setCapability("autoDismissAlerts", true);*/
 		// driver =new ChromeDriver(options);
 		//my code
+		System.out.println("Mobile");
 		DesiredCapabilities dc= new DesiredCapabilities();
 		//dc.setCapability("remoteAdbHost",new URL("192.168.0.101"));
 		//dc.setCapability("devicePort","5037");
 		dc.setCapability("deviceName","Samsung Galaxy S6");
 		dc.setCapability("platformName", "Android");
+		dc.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
 		driver = new RemoteWebDriver(new java.net.URL("http://34.228.220.218:6080"),dc);
 		//driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
 	}
