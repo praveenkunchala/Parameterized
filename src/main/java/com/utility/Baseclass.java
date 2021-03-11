@@ -185,12 +185,13 @@ public class Baseclass {
 		//my code
 		System.out.println("Mobile");
 		DesiredCapabilities dc= new DesiredCapabilities();
-		//dc.setCapability("remoteAdbHost",new URL("192.168.0.101"));
-		//dc.setCapability("devicePort","5037");
+		dc.setCapability("remoteAdbHost",new URL("http://3.87.97.198:6080"));
+		dc.setCapability("devicePort","4723");
 		dc.setCapability("deviceName","Samsung Galaxy S6");
 		dc.setCapability("platformName", "Android");
 		dc.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-		driver = new RemoteWebDriver(new java.net.URL("http://3.87.97.198:4723/"),dc);
+		driver = new RemoteWebDriver(new java.net.URL("http://3.87.97.198:6080"),dc);
+		System.out.println("end of mobile");
 		//driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
 	}
 
