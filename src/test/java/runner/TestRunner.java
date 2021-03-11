@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 				monochrome = true, 
 				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
 
-				tags = {"@Business_location_Saving,@Business_Preferences_Saving,@Dropdowns_Selection"}
+				tags = {"@Account_Mobile_Preference_Link"}
 
 )
 		public class TestRunner {
