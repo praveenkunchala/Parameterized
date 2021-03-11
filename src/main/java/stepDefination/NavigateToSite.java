@@ -70,7 +70,7 @@ public class NavigateToSite extends Baseclass {
 			// for jenkins
 			browserName=System.getProperty("browser");
 
-			//Baseclass.openBrowser(browserName);
+			Baseclass.openBrowser(browserName);
 		} catch (Exception e) {
 
 		}
