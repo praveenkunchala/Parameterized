@@ -190,7 +190,7 @@ public class Baseclass {
 		dc.setCapability("deviceName","Samsung Galaxy S6");
 		dc.setCapability("platformName", "Android");
 		dc.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-		driver = new RemoteWebDriver(new java.net.URL("http://172.17.0.1:4444/"),dc);
+		driver = new RemoteWebDriver(new java.net.URL("http://172.17.0.1:6080/"),dc);
 		System.out.println("end of mobile");
 		//driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
 	}
