@@ -36,6 +36,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import cucumber.api.Scenario;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -190,7 +191,8 @@ public class Baseclass {
 		dc.setCapability("deviceName","Samsung Galaxy S6");
 		dc.setCapability("platformName", "Android");
 		dc.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-		driver = new RemoteWebDriver(new java.net.URL("http://172.17.0.1:6080/"),dc);
+		//driver = new RemoteWebDriver(new java.net.URL("http://172.17.0.1:6080/"),dc);
+		driver=new AndroidDriver(new java.net.URL("http://54.175.96.227:4723/"),dc);
 		System.out.println("end of mobile");
 		//driver = new RemoteWebDriver(new java.net.URL("http://0.0.0.0:4723/wd/hub"), caps);
 	}
