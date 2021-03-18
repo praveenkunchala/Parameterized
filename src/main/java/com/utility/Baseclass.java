@@ -188,9 +188,9 @@ public class Baseclass {
 		DesiredCapabilities dc= new DesiredCapabilities();
 		//dc.setCapability("remoteAdbHost",new URL("http://3.87.97.198:6080"));
 		//dc.setCapability("devicePort","4723");
-		dc.setCapability("deviceName","Samsung Galaxy S6");
+		//dc.setCapability(MobileCapabilityType.DEVICE_NAME,"Samsung Galaxy S6");
 		dc.setCapability("platformName", "Android");
-		dc.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
+		dc.setCapability(CapabilityType.BROWSER_NAME,"Chrome");
 		//driver = new RemoteWebDriver(new java.net.URL("http://172.17.0.1:6080/"),dc);
 		driver=new AndroidDriver<>(new URL("http://54.175.96.227:4723/wd/hub"),dc);
 		System.out.println("end of mobile");
