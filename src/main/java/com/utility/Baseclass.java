@@ -47,9 +47,9 @@ public class Baseclass {
 	public static int count;
 	public static String browser = "Browser";
 
-	// public static RemoteWebDriver driver;
+	public static RemoteWebDriver driver;
 	public URL url;
-	public static WebDriver driver;
+	//public static WebDriver driver;
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
@@ -111,10 +111,10 @@ public class Baseclass {
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("1");
-			 URL ur= new URL("http://54.173.70.218:4444/wd/hub");
-			//driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
+			// URL ur= new URL("http://54.173.70.218:4444/wd/hub");
+			driver = new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			 System.out.println("starting browser");
-			 driver = new RemoteWebDriver(ur, capability); 
+			// driver = new RemoteWebDriver(ur, capability); 
 			 System.out.println("Browser invoked");
 	
 			break;
