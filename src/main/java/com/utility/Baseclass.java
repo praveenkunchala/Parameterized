@@ -47,9 +47,9 @@ public class Baseclass {
 	public static int count;
 	public static String browser = "Browser";
 
-	public static RemoteWebDriver driver;
+	//public static RemoteWebDriver driver;
 	public URL url;
-	//public static WebDriver driver;
+	public static WebDriver driver;
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
@@ -71,7 +71,6 @@ public class Baseclass {
 	}
 
 	public static void openBrowser(String browserType) throws Exception {
-		//String browserType1 = System.setProperty(key, value);
 		switch (browserType) {
 		case "chrome":
 			 /*WebDriverManager.chromedriver().setup();
@@ -93,27 +92,15 @@ public class Baseclass {
 			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
 			// options);
 			// DesiredCapabilities dc=DesiredCapabilities.chrome();
-			/*
-			 * ChromeOptions cap= new ChromeOptions().setHeadless(true);
-			 * cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-			 * UnexpectedAlertBehaviour.IGNORE);
-			 */
-
-			/*
-			 * cap.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
-			 * cap.setCapability(CapabilityType.VERSION, "11");
-			 */
-			/*
-			 * URL ur= new URL("http://54.173.70.218:4444/wd/hub"); driver= new
-			 * RemoteWebDriver(ur, cap);
-			 */
-			capability=DesiredCapabilities.chrome();
+			DesiredCapabilities cap = DesiredCapabilities.firefox(); 
+			URL url = new URL("http://18.132.3.110:4444/wd/hub");
+			driver = new RemoteWebDriver(url, cap);
+			/*capability=DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("browser invoking");
 			driver=new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
-			 System.out.println("starting browser");
-			 System.out.println("Browser invoked");
+			 System.out.println("Browser invoked");*/
 	
 			break;
 		case "internetexplorer":
