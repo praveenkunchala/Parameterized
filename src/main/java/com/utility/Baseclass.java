@@ -92,7 +92,7 @@ public class Baseclass {
 			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
 			// options);
 			// DesiredCapabilities dc=DesiredCapabilities.chrome();
-			DesiredCapabilities cap = DesiredCapabilities.firefox(); 
+			DesiredCapabilities cap = DesiredCapabilities.chrome(); 
 			URL url = new URL("http://18.132.3.110:4444/wd/hub");
 			driver = new RemoteWebDriver(url, cap);
 			/*capability=DesiredCapabilities.chrome();
