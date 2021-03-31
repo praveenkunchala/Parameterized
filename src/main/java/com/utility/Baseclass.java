@@ -98,7 +98,7 @@ public class Baseclass {
 			capability=DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
-			System.out.println("browser invoking");
+			System.out.println("browser need to start");
 			driver=new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			 System.out.println("Browser invoked");
 	
