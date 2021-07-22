@@ -1,0 +1,180 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 573156100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.ExtentReport(Scenario)"
+            }
+          }
+        ],
+        "line": 339,
+        "name": "Verify Natwest logo is as per design and when clicked directs the user back to the homepage",
+        "description": "",
+        "id": "testing-cases-related-to-qa-environment;verify-natwest-logo-is-as-per-design-and-when-clicked-directs-the-user-back-to-the-homepage;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 957934600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3722182300,
+              "status": "passed"
+            },
+            "line": 328,
+            "name": "Open site in \"chrome\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 14
+                }
+              ],
+              "location": "NavigateToSite.Open_site_in_browser(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3008334300,
+              "status": "passed"
+            },
+            "line": 329,
+            "name": "navigate to the site",
+            "match": {
+              "location": "NavigateToSite.navigated_to_the_site()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21026014600,
+              "status": "passed"
+            },
+            "line": 330,
+            "name": "verify the home page title",
+            "match": {
+              "location": "NavigateToSite.verify_the_home_page_title()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 81974400,
+              "status": "passed"
+            },
+            "line": 331,
+            "name": "Accept the cookies",
+            "match": {
+              "location": "NavigateToSite.Accept_the_cookies()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 30147586300,
+              "status": "passed"
+            },
+            "line": 332,
+            "name": "Click Linkden for logging in",
+            "match": {
+              "location": "Article_Page_Validations.Linkden_login()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10255737200,
+              "status": "passed"
+            },
+            "line": 333,
+            "name": "Click on the profile icon at the top right of the page",
+            "match": {
+              "location": "Preference_Page_View.click_on_the_profile_icon_at_the_top_right_of_the_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10154852700,
+              "status": "passed"
+            },
+            "line": 334,
+            "name": "Click on Bank logo",
+            "match": {
+              "location": "Clicking_On_Logo.click_on_bank_logo()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21024267400,
+              "status": "passed"
+            },
+            "line": 335,
+            "name": "verify the home page title",
+            "match": {
+              "location": "NavigateToSite.verify_the_home_page_title()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4408800,
+              "status": "passed"
+            },
+            "output": [
+              "Finished scenario"
+            ],
+            "line": 336,
+            "name": "verify home page title after clicking on logo",
+            "match": {
+              "location": "Clicking_On_Logo.verify_home_page_title_after_clicking_on_logo()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 326,
+            "name": "@Clicking_On_Logo.RNL"
+          },
+          {
+            "line": 1,
+            "name": "@RBS_Natwest_Lombard"
+          }
+        ]
+      }
+    ],
+    "name": "Testing cases related to QA Environment",
+    "description": "",
+    "id": "testing-cases-related-to-qa-environment",
+    "keyword": "Feature",
+    "uri": "testing_URL.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@RBS_Natwest_Lombard"
+      }
+    ]
+  }
+]
