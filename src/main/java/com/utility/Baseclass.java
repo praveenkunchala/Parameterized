@@ -73,35 +73,16 @@ public class Baseclass {
 	public static void openBrowser(String browserType) throws Exception {
 		switch (browserType) {
 		case "chrome":
-			 /*WebDriverManager.chromedriver().setup();
-			 driver = new ChromeDriver();*/
-			// WebDriverManager.chromedriver().driverVersion("72.0.3626.81").setup();
-			// System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-
-			// ChromeOptions options=new ChromeOptions().setHeadless(true);
-			// options.addArguments("headless");
-			// driver = new ChromeDriver(options);
-			// ChromeOptions options=new ChromeOptions().setHeadless(true);
-			// driver = new ChromeDriver(options);
-			// driver = new ChromeDriver();
-			/*
-			 * ChromeOptions options= new ChromeOptions().setHeadless(true);
-			 * options.addArguments("headless"); driver=new RemoteWebDriver(options);
-			 */
-			// driver = new ChromeDriver(options);
-			// driver = new RemoteWebDriver(new URL("http://54.173.70.218:4444/wd/hub"),
-			// options);
-			// DesiredCapabilities dc=DesiredCapabilities.chrome();
-			/*DesiredCapabilities cap = DesiredCapabilities.chrome(); 
-			URL url = new URL("http://18.132.3.110:4444/wd/hub");
-			driver = new RemoteWebDriver(url, cap);*/
-			capability=DesiredCapabilities.chrome();
+			System.out.println("browser need to start");
+			 WebDriverManager.chromedriver().setup();
+			 driver = new ChromeDriver();
+			/*capability=DesiredCapabilities.chrome();
 			capability.setBrowserName("chrome");
 			capability.setPlatform(Platform.LINUX);
 			System.out.println("browser need to start");
 			driver=new RemoteWebDriver(new java.net.URL("http://18.132.3.110:4444/wd/hub"), capability);
 			 System.out.println("Browser invoked");
-	
+	*/
 			break;
 		case "internetexplorer":
 			// WebDriverManager.iedriver().setup();
@@ -192,7 +173,7 @@ public class Baseclass {
 
 	public static void navigateUrl(String url) {
 		try {
-			if (driver != null) {
+			if (driver!= null) {
 				System.out.println("browser invoking" + url);
 				driver.get(url);
 				System.out.println("browser invoking after get url");
@@ -206,7 +187,7 @@ public class Baseclass {
 
 	public static String getPageTitle() {
 
-		if (driver != null) {
+		if (driver!= null) {
 			title = driver.getTitle();
 		}
 		return title;
@@ -305,9 +286,13 @@ public class Baseclass {
 		System.out.println("Executing Scenario :" + scenario.getName());
 
 		String dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		//String path = System.getProperty("user.dir") +"\\target\\cucumber\\" + dateFormat + ".html";
 		String path = System.getProperty("user.dir") +"\\target\\cucumber\\" + dateFormat + ".html";
+
+		//String path = System.getProperty("user.dir")+ dateFormat + ".html";
+
 		//String path="C:\\Users\\Venkata.Kunchala\\OneDrive - GlobalData PLC\\Desktop\\reports"+dateFormat+".html";
-		// Date date = new Date();
+		Date date = new Date();
 		er = new ExtentReports(path, true);
 		test = er.startTest("ExtentDemo");
 		// er=new ExtentReports("D:\\Bhanu_Test\\PPC

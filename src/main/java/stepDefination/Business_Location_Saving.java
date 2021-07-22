@@ -35,13 +35,15 @@ public class Business_Location_Saving extends Baseclass {
 	@Then("^Select a 'business location' from the drop down menu$")
 	public void select_a_business_location_from_the_drop_down_menu() throws Throwable {
 		//for jenkins
-				//String bank=System.getProperty("homepage_title");
-				String bank=elementProperties.getProperty("homepage_title");
+				String bank=System.getProperty("homepage_title");
+				//String bank=elementProperties.getProperty("homepage_title");
 				 System.out.println(bank);
 				switch(bank)
 				{
 				case "RBS":
 				case "Ulster NI":
+				case "Lombard":
+				case "Natwest":
 		try {
 			WebElement b1 = Baseclass.WaitElementVisible(driver,
 					By.xpath(elementProperties.getProperty("Business_location")));
@@ -73,6 +75,7 @@ public class Business_Location_Saving extends Baseclass {
 		}
 			break;
 				case "RBS Premier":
+				case "Natwest Premier":
 					int t;
 					
 					try {

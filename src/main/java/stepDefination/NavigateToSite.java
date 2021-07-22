@@ -68,7 +68,7 @@ public class NavigateToSite extends Baseclass {
 	public void Open_site_in_browser(String browserName) {
 		try {
 			// for jenkins
-			browserName=System.getProperty("browser");
+			//browserName=System.getProperty("browser");
 
 			Baseclass.openBrowser(browserName);
 		} catch (Exception e) {
@@ -85,8 +85,8 @@ public class NavigateToSite extends Baseclass {
 			System.out.println(s);
 			System.out.println("hub url");
 			// for Jenkins
-			Baseclass.navigateUrl(System.getProperty("url"));
-			//Baseclass.navigateUrl(elementProperties.getProperty("url"));
+		//	Baseclass.navigateUrl(System.getProperty("url"));
+			Baseclass.navigateUrl(elementProperties.getProperty("url"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
 		}
@@ -108,9 +108,9 @@ public class NavigateToSite extends Baseclass {
 			Baseclass.explicitlyWait(Baseclass.timeout);
 			System.out.println("pageTitle :" + pageTitle);
 			// for jenkins
-			 Assert.assertEquals(pageTitle, System.getProperty("homepage_title"));
+			// Assert.assertEquals(pageTitle, System.getProperty("homepage_title"));
 
-			//Assert.assertEquals(pageTitle, elementProperties.getProperty("homepage_title"));
+			Assert.assertEquals(pageTitle, elementProperties.getProperty("homepage_title"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
 		}
@@ -204,6 +204,7 @@ public class NavigateToSite extends Baseclass {
 			case "Ulster NI":
 			case "UIster ROI":
 			case "Ulster ROI":
+			case "Lombard":
 				WebElement cookies = Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("cookies")));
 				System.out.println("cookies 1");
 				cookies.findElement(By.xpath(elementProperties.getProperty("cookies_Window"))).click();
@@ -357,13 +358,12 @@ public class NavigateToSite extends Baseclass {
 			WebElement terms_conditions = Baseclass.WaitElementVisible(driver,
 					By.xpath(elementProperties.getProperty("terms&conditions")));
 			Baseclass.JavaScriptExec_click(terms_conditions);
-			// Baseclass.WaitElementVisible(driver,
-			// By.xpath(elementProperties.getProperty("terms&conditions"))).click();
+			Baseclass.WaitElementVisible(driver,By.xpath(elementProperties.getProperty("terms&conditions"))).click();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			String terms_condition = Baseclass
+			/*String terms_condition = Baseclass
 					.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("terms&conditiontitle")))
-					.getText();
-			Assert.assertEquals(terms_condition, elementProperties.getProperty("terms&conditionpageheader"));
+					.getText();*/
+			//Assert.assertEquals(terms_condition, elementProperties.getProperty("terms&conditionpageheader"));
 			Baseclass.navigateBack();
 
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
@@ -376,7 +376,7 @@ public class NavigateToSite extends Baseclass {
 		try {
 
 			if (Menuname.equalsIgnoreCase("Toolkits")) {
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Tookits"))).click();
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Toolkits1"))).click();
 				Baseclass.explicitlyWait(10);
 				String Toolkits = Baseclass
 						.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Toolkits_Text"))).getText();
@@ -517,11 +517,64 @@ public class NavigateToSite extends Baseclass {
 				break;
 
 			case "Sectors":
-				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Sectors"))).click();
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Sectors1"))).click();
 				Title_Text = elementProperties.getProperty("Actual_Sectors");
 				Actual_Current_Url = elementProperties.getProperty("Current_URL_Sectors");
+				System.out.println("0");
 				Baseclass.explicitlyWait(10);
 				break;
+			case "Money matters":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Money_matters"))).click();
+				Title_Text = elementProperties.getProperty("Actual_Money_Matters");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Money_matters");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+				break;
+			case "Spending":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Spending1"))).click();
+				Title_Text = elementProperties.getProperty("Actual_Spending");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Spending");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+				break;
+			case "At home":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("At_home"))).click();
+				Title_Text = elementProperties.getProperty("Actual_At_home");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_At_home");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+				break;
+			case "Life moments":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Life_Moments"))).click();
+				Title_Text = elementProperties.getProperty("Actual_Life_moments");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Life_Moments");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+				break;
+			case "Insight":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("C"))).click();
+				Title_Text = elementProperties.getProperty("Insight");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Insight");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+				break;
+			case "Events1":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Events1"))).click();
+				Title_Text = elementProperties.getProperty("Events");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Events");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+
+				break;
+			case "Toolkits":
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Toolkits1"))).click();
+				Title_Text = elementProperties.getProperty("Toolkits");
+				Actual_Current_Url = elementProperties.getProperty("Current_URL_Toolkits");
+				System.out.println("0");
+				Baseclass.explicitlyWait(10);
+
+				break;
+
 			}
 			String business_guidance = Baseclass
 					.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("business_guidance_text")))
@@ -540,7 +593,7 @@ public class NavigateToSite extends Baseclass {
 						+ " for the page " + Title_Text);
 			}
 			int forms = Baseclass.get_Count(elementProperties.getProperty("Cards_count"));
-			for (i = 2; i <= forms; i++) {
+			for (i = 2; i <= forms-1; i++) {
 				if (browser.contentEquals("Mobile")) {
 					if (i > 9) {
 						WebElement webElement = driver.findElement(By.xpath(
@@ -561,7 +614,7 @@ public class NavigateToSite extends Baseclass {
 					if (i == 6) {
 						((JavascriptExecutor) driver).executeScript("scroll(0,1100)");
 					}
-					String Image = driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/main/div/div/div/div/div[" + i
+					String Image = driver.findElement(By.xpath("//*[@id='page-wrapper']/main/div/div/div/div/div[" + i
 							+ "]/article/a/div[1]/div/div/div/img[2]")).getAttribute("src");
 					HttpGet request = new HttpGet(Image);
 					HttpResponse response = client.execute(request);
@@ -841,17 +894,31 @@ public class NavigateToSite extends Baseclass {
 	public static void search_any_text() {
 		try {
 			Actions action = new Actions(driver);
-			action.sendKeys(elementProperties.getProperty("Search_text")).perform();
+			//action.sendKeys(elementProperties.getProperty("Search_text")).perform();
+		//	Baseclass.explicitlyWait(Baseclass.timeout);
+			System.out.println("0");
+			//action.sendKeys(Keys.RETURN).perform();
+			//action.sendKeys(Keys.ENTER).perform();
+			System.out.println("1");
+		//	Baseclass.explicitlyWait(Baseclass.timeout);
+		WebElement	element=Baseclass.driver.findElement(By.xpath("//nav[@role='navigation']/div/form"));
+			element.click();
+			Baseclass.driver.findElement(By.xpath("/html/body/div[1]/div/div/header/div/div/div[2]/div/div/div/nav/div/form/div[2]/div/input")).sendKeys("technically");
 			Baseclass.explicitlyWait(Baseclass.timeout);
-			action.sendKeys(Keys.RETURN).perform();
+			
+			action.sendKeys(Keys.ENTER).perform();
 			Baseclass.explicitlyWait(Baseclass.timeout);
+         //   Baseclass.driver.navigate().refresh();
+            System.out.println("2");
 			String Search_Text = Baseclass
 					.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Search_Field")))
 					.getAttribute("value");
-			if (elementProperties.getProperty("Search_text").equals(Search_Text)) {
+			System.out.println(Search_Text);
+			if (elementProperties.getProperty("Search_text").equalsIgnoreCase(Search_Text)) {
 				test.log(LogStatus.PASS, "Searched with the text '" + Search_Text);
 				test.log(LogStatus.PASS,
 						"Text searched as '" + Search_Text + "', is populating fine in the search box in search page");
+			System.out.println("3");
 			} else {
 				test.log(LogStatus.FAIL,
 						"Text searched as '" + Search_Text + "', is populating wrong in the search box in search page");
@@ -1280,7 +1347,10 @@ public class NavigateToSite extends Baseclass {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Footer_Follow")))
 					.click();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+            Baseclass.WaitElementVisible(driver, By.xpath("//*[contains(text(),'Sign')]")).click();
+            Baseclass.explicitlyWait(Baseclass.timeout);
+            String Window=Baseclass.driver.getWindowHandle();
+           Baseclass.switchToNewWindow();
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username")))
 					.sendKeys(elementProperties.getProperty("Linkden_User_name"));
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password")))
@@ -1304,6 +1374,12 @@ public class NavigateToSite extends Baseclass {
 
 	@Then("^go to Events Page and verify Cards$")
 	public void Events_Page_cards() throws IOException {
+		if(elementProperties.getProperty("url").contains("roi"))
+		{
+			test.log(LogStatus.INFO,"Uister ROI page does not have Event section in home page");
+		}
+		else
+		{
 		try {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Events"))).click();
 			Baseclass.explicitlyWait(3);
@@ -1374,5 +1450,5 @@ public class NavigateToSite extends Baseclass {
 			e.printStackTrace();
 		}
 	}
-
+	}
 }

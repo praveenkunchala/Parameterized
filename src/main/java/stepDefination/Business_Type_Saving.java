@@ -34,6 +34,8 @@ public class Business_Type_Saving extends Baseclass {
 		{
 		case "RBS":
 		case "Ulster NI":
+		case "Natwest":
+		case "Lombard":
 		try {
 			WebElement b1 = Baseclass.WaitElementVisible(driver,
 					By.xpath(elementProperties.getProperty("Business_Type")));

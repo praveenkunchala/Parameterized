@@ -22,14 +22,16 @@ public class Business_Preferences_Saving extends Baseclass {
 	@Then("^Select preferences for 'your business' section$")
 	public void select_preferences_for_your_business_section() throws Throwable {
 		//jenkin
-	//	String bank= System.getProperty("homepage_title");
+		String bank= System.getProperty("homepage_title");
 		//switch (title) {
-		 String bank=elementProperties.getProperty("homepage_title");
+		// String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)
 		{
 		case "RBS":
+		case "Natwest":
 		case "Ulster NI":
+		case "Lombard":
 				try {
 				System.out.println("1");
 				WebElement flag = Baseclass.driver
@@ -65,6 +67,7 @@ public class Business_Preferences_Saving extends Baseclass {
                 break;
 			
 		case "RBS Premier":
+		case "Natwest Premier":
 			System.out.println("RBS premier");
 			Baseclass.RefreshPage();
 			WebElement flag22 = Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("Delete_button")));

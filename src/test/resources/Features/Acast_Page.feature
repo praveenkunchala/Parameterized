@@ -42,8 +42,8 @@ Then navigate to the site
 Then verify the home page title
 And Accept the cookies
 Then Search for the acast page on frontend eg:technically speaking
-Then Verify article share functionality on Linkden page
-Then Check the post on Linkden Page
+Then Verify article share functionality on Linkden
+Then Check the post on Linkden
 Examples: 
 		|browser	|
 		|chrome		|

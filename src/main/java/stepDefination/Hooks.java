@@ -10,17 +10,18 @@ import cucumber.api.java.Before;
 
 public class Hooks {
 	public Scenario scenario;
-	@Before({"@Account_Mobile_Preference_Link,@PCC_Home_page,@PCC_Article_Validations,@Business_location_Saving,@Account_Preference_Link,@Business_Preferences_Saving,@clear_All_Button_All_Article_Page,@clear_All_Button_On_Pop_Up,@Clicking_On_Logo,@deleting_Profile,@Dropdowns_Selection,@Login_Button,@Preference_Categories,@Preference_Page_validations,@Preference_Page_View,@Select_All_Filter_Pop_Up,@User_Subscription,@Spot_Light_Article"})
+	@Before({"@RBS_Natwest_Lombard,@PCC_All_Article_Page,@Account_Preference_Link.RNL"})
 	public void ExtentReport(Scenario scenario) throws NullPointerException, MalformedURLException, NoClassDefFoundError
 	{
+		System.out.println("hooks1");
 		this.scenario= scenario;
 		Baseclass.testSetup(scenario);
 	}
 	
 	
-	@After({"@Account_Mobile_Preference_Link,@PCC_Home_page,@PCC_Article_Validations,@Business_location_Saving,@Account_Preference_Link,@Business_Preferences_Saving,@clear_All_Button_All_Article_Page,@clear_All_Button_On_Pop_Up,@Clicking_On_Logo,@deleting_Profile,@Dropdowns_Selection,@Login_Button,@Preference_Categories,@Preference_Page_validations,@Preference_Page_View,@Select_All_Filter_Pop_Up,@User_Subscription"})
+	@After({"@RBS_Natwest_Lombard"})
 	public void afterScenario(Scenario scenario) {
-		
+		System.out.println("hooks2");
 		Baseclass.tearDown(scenario);
 		Baseclass.closeAllBrowsers();
 	}

@@ -25,27 +25,27 @@ Examples: Different browser parameter
 #|chrome		|
 #|firefox	|
 
-@PCC_Social_links
-Scenario Outline: Validate Social Media Posts 
-Given Open site in "<browser>"  
-Then navigate to the site
-Then verify the home page title
-And Accept the cookies
-Then Navigate to first article
-Then Verify article share functionality on Facebook
-Then Check the post on Facebook
-Then Navigate to first article
-Then Verify article share functionality on Twitter
-Then Check the post on Twitter
-Then Click Linkden for logging in
-Then Navigate to first article
-Then Verify article share functionality on Linkden
-Then Check the post on Linkden
+#@PCC_Social_links
+#Scenario Outline: Validate Social Media Posts 
+#Given Open site in "<browser>"  
+#Then navigate to the site
+#Then verify the home page title
+#And Accept the cookies
+#Then Navigate to first article
+#Then Verify article share functionality on Facebook
+#Then Check the post on Facebook
+#Then Navigate to first article
+#Then Verify article share functionality on Twitter
+#Then Check the post on Twitter
+#Then Click Linkden for logging in
+#Then Navigate to first article
+#Then Verify article share functionality on Linkden
+#Then Check the post on Linkden
 
 
-Examples: 
-|browser	|
-|chrome		|
+#Examples: 
+#|browser	|
+#|chrome		|
 #|safari|
 #|chrome		|
 #|firefox	|

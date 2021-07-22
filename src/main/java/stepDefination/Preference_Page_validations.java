@@ -21,14 +21,16 @@ public class Preference_Page_validations extends Baseclass {
 	@Then("^validate preference Page Objects$")
 	public void validate_preference_page_objects() throws Throwable {
 		//for jenkins
-		//String bank=System.getProperty("homepage_title");
-		 String bank=elementProperties.getProperty("homepage_title");
+		String bank=System.getProperty("homepage_title");
+		// String bank=elementProperties.getProperty("homepage_title");
 		 System.out.println(bank);
 		switch(bank)
 		{
 		case "RBS":
 		case "Ulster ROI":
 		case "Ulster NI":
+		case "Natwest":
+		case "Lombard":
 		try {
 			System.out.println("1");
 			boolean Fn = Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("First_Name")))
@@ -190,6 +192,7 @@ public class Preference_Page_validations extends Baseclass {
 
 break;
 		case "RBS Premier":
+		case "Natwest Premier":
 			try {
 				
 				boolean Fn = Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("First_Name")))

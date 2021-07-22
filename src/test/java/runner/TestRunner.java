@@ -8,9 +8,10 @@ import cucumber.api.junit.Cucumber;
 				features ="src/test/resources/Features",
 				glue = { "stepDefination" }, 
 				monochrome = true, 
-				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
+				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"}
+				//,
 
-				tags = {"@PCC_Home_page,@PCC_Article_Validations,@Business_location_Saving,@Account_Preference_Link,@Business_Preferences_Saving,@clear_All_Button_All_Article_Page,@clear_All_Button_On_Pop_Up,@Clicking_On_Logo,@deleting_Profile,@Dropdowns_Selection,@Login_Button,@Preference_Categories,@Preference_Page_validations,@Preference_Page_View,@Select_All_Filter_Pop_Up,@User_Subscription"}
+			//	tags ={"@PCC_Footer_Linkden_Login.RNL"}
 
 )
 		public class TestRunner {

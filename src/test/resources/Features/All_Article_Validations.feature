@@ -108,8 +108,8 @@ Then navigate to the site
 Then verify the home page title
 And Accept the cookies
 Then Click Required Article in the Home page
-Then Click subscribe button in the Article Page
-Then Click Required Article in the Home page
+#Then Click subscribe button in the Article Page
+#Then Click Required Article in the Home page
 Then get Subscribe button color and Click Subscribe
 Then verify if other articles tagged to the same category are subscribed
 

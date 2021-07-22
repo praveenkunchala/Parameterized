@@ -45,7 +45,8 @@ public class Preference_Categories extends Baseclass {
 				switch(bank)
 				{
 				case "RBS":
-				
+				case "Natwest":
+				case "Lombard":
 				case "Ulster NI":
 		List<String> l = new ArrayList<String>();
 		String categories[] = { "Cyber Security", "Leadership and Management", "Sales and Marketing",
@@ -80,6 +81,7 @@ public class Preference_Categories extends Baseclass {
 			break;
 			
 			case "RBS Premier":
+			case "Natwest Premier":
 				List<String> ll = new ArrayList<String>();
 				String categorie[] = { "Cyber Security and Fraud","Funding Education","Inheritance Planning","Insurance","Investments",
 		                "Pensions","Philanthropy and Charity","Retirement Planning","Savings and ISAs","Wills"

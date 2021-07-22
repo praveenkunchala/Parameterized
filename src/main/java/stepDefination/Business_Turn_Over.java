@@ -29,6 +29,8 @@ public class Business_Turn_Over extends Baseclass {
 		switch (bank) {
 		case "RBS":
 		case "Ulster NI":
+		case "Lombard":
+		case "Natwest":
 			try {
 
 				WebElement b1 = Baseclass.WaitElementVisible(driver,

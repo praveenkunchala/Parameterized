@@ -1,5 +1,8 @@
 package stepDefination;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.Console;
 import java.io.IOException;
 import java.util.Set;
@@ -38,7 +41,7 @@ public class Article_Page_Validations extends Baseclass {
 	String Share_field;
 	static int Preference_article;
 	WebElement ww;
-
+	WebElement	Subscribe;
 	@And("^Click View All Article Button$")
 	public void Click_View_All_Article_Button() {
 		try {
@@ -236,6 +239,41 @@ public class Article_Page_Validations extends Baseclass {
 			e.printStackTrace();
 		}
 	}
+
+@Then("^Click Linkden for logging in through premier page$")
+public void click_Linkden_for_logging_in_through_premier_page() throws Throwable {
+	try {
+		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkedn_Click"))).click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Poup"))).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Username"))).sendKeys(elementProperties.getProperty("Linkden_User_name"));
+		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Password"))).sendKeys(elementProperties.getProperty("Linkden_password"));
+		Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Linkden_Signup"))).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Baseclass.explicitlyWait(10);
+		String Url = Baseclass.get_Url();
+		System.out.println("Url  :"+Url);
+		if(Url.equalsIgnoreCase(elementProperties.getProperty("Profile_Page")))
+		{
+			test.log(LogStatus.PASS, "Site is getting re-directing to User profile page after login");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Site is not getting re-directing to User profile page after login");
+		}
+		Baseclass.explicitlyWait(2);
+		//Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Header_Logo"))).click();
+					
+	} catch (StaleElementReferenceException | ElementNotInteractableException e) {
+		test.log(LogStatus.FAIL, "Unable to automate next button due to exception");
+		e.printStackTrace();
+	}
+}
+
+
 	@Then("^Verify image after logging in$")
 	public void Image_after_login() throws InterruptedException, IOException {
 		try {
@@ -261,8 +299,9 @@ public class Article_Page_Validations extends Baseclass {
 	@Then("^verify Toolkit cards in the Page$")
 	public void Toolkit_cards() throws InterruptedException {
 		try {
-			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Tookits"))).click();
-
+			System.out.println("-1");
+			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Toolkits1"))).click();
+             System.out.println("-2");
 			String Card_Text = Baseclass
 					.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Get_Toolkits_cards_text")))
 					.getText();
@@ -354,6 +393,17 @@ public class Article_Page_Validations extends Baseclass {
 
 	@Then("^Verify the Toolkit article redirection feature$")
 	public void Toolkit_article() throws InterruptedException {
+		String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		
+		case "RBS":
+		case  "NatWest":
+		case "Lombard":
+		case "Ulster NI":
+		case "Ulster ROI":
+		{
 		try {
 			if (browser.equalsIgnoreCase("Mobile")) {
 				Baseclass
@@ -365,10 +415,12 @@ public class Article_Page_Validations extends Baseclass {
 				Baseclass.explicitlyWait(2);
 				Baseclass.scrollDownFull();
 			} else {
+				System.out.println("0");
 				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Hover_Pre_Start_up")))
 						.click();
 			}
 			Baseclass.explicitlyWait(5);
+			System.out.println("1");
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("First_card_text"))).click();
 			Baseclass.explicitlyWait(5);
 			String toolkits = driver.getCurrentUrl();
@@ -386,7 +438,12 @@ public class Article_Page_Validations extends Baseclass {
 			test.log(LogStatus.FAIL, "Unable to automate Toolkit article re-direction");
 			e.printStackTrace();
 		}
+		break;
 	}
+		case "RBS Premier":
+			test.log(LogStatus.INFO,"There is no tool kit section");
+			break;}
+		}
 
 	@Then("^Click Required Article in the Home page$")
 	public void Click_Required_Article() throws InterruptedException {
@@ -414,15 +471,25 @@ public class Article_Page_Validations extends Baseclass {
 				} catch (TimeoutException e) {
 					System.out.println("k : " + k);
 				}
+				
 			}
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			test.log(LogStatus.FAIL, "Unable to Click required option due to exception");
 			e.printStackTrace();
-		}
-	}
+		}}
+	
+		
+				
+			
 
 	@Then("^get Subscribe button color and Click Subscribe$")
 	public void Click_Subscribe_Button() throws InterruptedException {
+		String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		
+		case "RBS":
 		try {
 			Baseclass.explicitlyWait(3);
 			// Scroll down and see if the Subscribe field is floating
@@ -496,7 +563,11 @@ public class Article_Page_Validations extends Baseclass {
 			test.log(LogStatus.FAIL, "Unable to automate next button due to exception");
 			e.printStackTrace();
 		}
+		break;			
 	}
+	
+		
+		}
 
 	@Then("^Click subscribe button in the Article Page$")
 	public void Click_Subscribe_Button_Article_Page() throws InterruptedException {
@@ -794,8 +865,15 @@ public class Article_Page_Validations extends Baseclass {
 
 	@Then("^Verify Events Article Page$")
 	public static void Verify_Events_Article_Page() throws IOException {
+		String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		case "Ulster ROI":
+			test.log(LogStatus.INFO,"There is no Event section in Uister ROI home page");
+			break;
+			default:
 		try {
-
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Events"))).click();
 			Baseclass.explicitlyWait(5);
 			try {
@@ -871,11 +949,17 @@ public class Article_Page_Validations extends Baseclass {
 		} catch (StaleElementReferenceException | ElementNotInteractableException | TimeoutException e) {
 			test.log(LogStatus.FAIL, "Unable to automate Events article page due to exception");
 			e.printStackTrace();
-		}
+		}break;}
 	}
 
 	@Then("^Change a preference to subscribed$")
-	public void Change_Preferences() throws InterruptedException {
+	public void Change_Preferences() throws InterruptedException, AWTException {
+		 String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		case "RBS":
+		case "Ulster NI":
 		try {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Login_Image_after_login")))
 					.click();
@@ -923,11 +1007,75 @@ public class Article_Page_Validations extends Baseclass {
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			test.log(LogStatus.FAIL, "Unable to Save Preference due to exception");
 			e.printStackTrace();
-		}
+		} 
+		break;
+		case "RBS Premier":
+			try {
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Login_Image_after_login")))
+						.click();
+				Baseclass.explicitlyWait(4);
+				Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Your_Intrests"))).click();
+				Baseclass.explicitlyWait(4);
+		
+			
+				try {
+					
+			        Robot robot = new Robot();
+
+			        // Scroll Down using Robot class
+			        robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+			        robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+                  
+					//Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Email_Checkbox"))).click();
+			Baseclass.WaitElementVisible(driver, By.xpath("//*[@id=\"profile-tabpanel-1\"]/div/div[1]/div[1]/ul/li[1]/span/span/span[1]")).click();
+				
+			Baseclass.explicitlyWait(Baseclass.timeout);
+					System.out.println("Checked Preference");
+					
+					
+					Baseclass.explicitlyWait(2);
+					/*Baseclass
+						.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Change_Preference_toggle")))
+							.click();*/
+					Baseclass.explicitlyWait(2);
+					Baseclass.scrollDownFull();
+					Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Save_Preference_Button")))
+							.click();
+					Preference_article = 1;
+					test.log(LogStatus.PASS, "Preference is updated (Unsubscribed) for testing");
+				} catch (ArrayIndexOutOfBoundsException e) {
+					/*((JavascriptExecutor) driver).executeScript("scroll(0,200)");
+					Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Email_Checkbox"))).click();
+					System.out.println("Split2 : " + Split);
+					Baseclass.explicitlyWait(2);
+					Baseclass
+							.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Change_Preference_toggle")))
+							.click();*/
+					
+					Baseclass.explicitlyWait(2);
+					Baseclass.scrollDownFull();
+					Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Save_Preference_Button")))
+							.click();
+					Preference_article = 0;
+					test.log(LogStatus.PASS, "Preference is updated (Subscribed) for testing");
+				}
+				//Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("Header_Logo"))).click();
+			} catch (StaleElementReferenceException | ElementNotInteractableException e) {
+				test.log(LogStatus.FAIL, "Unable to Save Preference due to exception");
+				e.printStackTrace();
+			} 
+			break;
+			}
 	}
 
 	@Then("^Verify if the subscribed categorie is changed to subscribe$")
 	public void Verify_Subscribed_Market_Trends() throws InterruptedException {
+		String bank=elementProperties.getProperty("homepage_title");
+		 System.out.println(bank);
+		switch(bank)
+		{
+		case "RBS":
+		case "Ulster NI":
 		try {
 			Baseclass.WaitElementVisible(driver, By.xpath(elementProperties.getProperty("MarketTrends"))).click();
 			Baseclass.explicitlyWait(4);
@@ -968,7 +1116,12 @@ public class Article_Page_Validations extends Baseclass {
 			test.log(LogStatus.FAIL, "Unable to check Subscribe due to exception");
 			e.printStackTrace();
 		}
+		break;
+		case "RBS Premier":
+			test.log(LogStatus.INFO, "there is no email check box");
+			break;
 	}
+		}
 
 	@Then("^Verify Header Title and Text$")
 	public void Verify_Header_Title_Text() throws InterruptedException {
