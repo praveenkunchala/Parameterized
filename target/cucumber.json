@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 573156100,
+              "duration": 456058000,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 339,
-        "name": "Verify Natwest logo is as per design and when clicked directs the user back to the homepage",
+        "line": 12,
+        "name": "Verify the aricles",
         "description": "",
-        "id": "testing-cases-related-to-qa-environment;verify-natwest-logo-is-as-per-design-and-when-clicked-directs-the-user-back-to-the-homepage;;2",
+        "id": "verify-weather-user-is-able-to-open-all-articles;verify-the-aricles;;2",
         "after": [
           {
             "result": {
-              "duration": 957934600,
+              "duration": 2199710300,
               "status": "passed"
             },
             "match": {
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 3722182300,
+              "duration": 13914161300,
               "status": "passed"
             },
-            "line": 328,
+            "line": 4,
             "name": "Open site in \"chrome\"",
             "match": {
               "arguments": [
@@ -55,10 +55,10 @@
           },
           {
             "result": {
-              "duration": 3008334300,
+              "duration": 2023326300,
               "status": "passed"
             },
-            "line": 329,
+            "line": 5,
             "name": "navigate to the site",
             "match": {
               "location": "NavigateToSite.navigated_to_the_site()"
@@ -67,10 +67,10 @@
           },
           {
             "result": {
-              "duration": 21026014600,
+              "duration": 21016157600,
               "status": "passed"
             },
-            "line": 330,
+            "line": 6,
             "name": "verify the home page title",
             "match": {
               "location": "NavigateToSite.verify_the_home_page_title()"
@@ -79,10 +79,10 @@
           },
           {
             "result": {
-              "duration": 81974400,
+              "duration": 129017000,
               "status": "passed"
             },
-            "line": 331,
+            "line": 7,
             "name": "Accept the cookies",
             "match": {
               "location": "NavigateToSite.Accept_the_cookies()"
@@ -91,89 +91,49 @@
           },
           {
             "result": {
-              "duration": 30147586300,
+              "duration": 20067505400,
               "status": "passed"
             },
-            "line": 332,
-            "name": "Click Linkden for logging in",
+            "line": 8,
+            "name": "click view article link",
             "match": {
-              "location": "Article_Page_Validations.Linkden_login()"
+              "location": "Clicking_Articles.click_view_article_link()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 10255737200,
-              "status": "passed"
-            },
-            "line": 333,
-            "name": "Click on the profile icon at the top right of the page",
-            "match": {
-              "location": "Preference_Page_View.click_on_the_profile_icon_at_the_top_right_of_the_page()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 10154852700,
-              "status": "passed"
-            },
-            "line": 334,
-            "name": "Click on Bank logo",
-            "match": {
-              "location": "Clicking_On_Logo.click_on_bank_logo()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 21024267400,
-              "status": "passed"
-            },
-            "line": 335,
-            "name": "verify the home page title",
-            "match": {
-              "location": "NavigateToSite.verify_the_home_page_title()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 4408800,
+              "duration": 201072877500,
               "status": "passed"
             },
             "output": [
               "Finished scenario"
             ],
-            "line": 336,
-            "name": "verify home page title after clicking on logo",
+            "line": 9,
+            "name": "click all Articles in home page",
             "match": {
-              "location": "Clicking_On_Logo.verify_home_page_title_after_clicking_on_logo()"
+              "location": "Clicking_Articles.click_all_Articles_in_home_page()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 326,
-            "name": "@Clicking_On_Logo.RNL"
-          },
-          {
             "line": 1,
-            "name": "@RBS_Natwest_Lombard"
+            "name": "@Clicking_Articles"
           }
         ]
       }
     ],
-    "name": "Testing cases related to QA Environment",
+    "name": "Verify weather user is able to open all articles",
     "description": "",
-    "id": "testing-cases-related-to-qa-environment",
+    "id": "verify-weather-user-is-able-to-open-all-articles",
     "keyword": "Feature",
-    "uri": "testing_URL.feature",
+    "uri": "ClickingArticles.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@RBS_Natwest_Lombard"
+        "name": "@Clicking_Articles"
       }
     ]
   }

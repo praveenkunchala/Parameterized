@@ -85,7 +85,7 @@ public class NavigateToSite extends Baseclass {
 			System.out.println(s);
 			System.out.println("hub url");
 			// for Jenkins
-		//	Baseclass.navigateUrl(System.getProperty("url"));
+			//Baseclass.navigateUrl(System.getProperty("url"));
 			Baseclass.navigateUrl(elementProperties.getProperty("url"));
 		} catch (StaleElementReferenceException | ElementNotInteractableException e) {
 			e.printStackTrace();
@@ -205,6 +205,8 @@ public class NavigateToSite extends Baseclass {
 			case "UIster ROI":
 			case "Ulster ROI":
 			case "Lombard":
+			case "NatWest":
+			case "NatWest Premier":
 				WebElement cookies = Baseclass.driver.findElement(By.xpath(elementProperties.getProperty("cookies")));
 				System.out.println("cookies 1");
 				cookies.findElement(By.xpath(elementProperties.getProperty("cookies_Window"))).click();

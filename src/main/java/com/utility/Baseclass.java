@@ -53,7 +53,9 @@ public class Baseclass {
 	public static ChromeDriver ChromeDriver;
 	public static int timeout = 10;
 	public static InternetExplorerOptions options;
-
+    public static int PageNo=1;
+    
+    public static int Page=2;
 	public Scenario scenario;
 	public static ExtentTest test;
 	public static ExtentReports report;

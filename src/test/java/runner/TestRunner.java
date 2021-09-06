@@ -8,10 +8,9 @@ import cucumber.api.junit.Cucumber;
 				features ="src/test/resources/Features",
 				glue = { "stepDefination" }, 
 				monochrome = true, 
-				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"}
-				//,
+				plugin = {"pretty","html:target/cucumber", "json:target/cucumber.json"},
 
-			//	tags ={"@PCC_Footer_Linkden_Login.RNL"}
+			tags ={"@Clicking_Articles"}
 
 )
 		public class TestRunner {
